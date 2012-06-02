@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ruleset name="guidance" root="activity" xml:lang="en" version="1.0">
+    <description>
+        <div>An example of rules which might be applied to suggest corrections to common problems, such as the inclusion of elements which are thought to be part of the standard but are not</div>
+    </description>
+    <rule id="guidance-v1:1">
+        <path>/reporting-org/@type</path>
+        <assertion>false()</assertion>
+        <description>this attribute has been suggested for Version 2 but is not valid in version 1.0</description>
+    </rule>
+    <rule id="guidance-v1:2">
+        <path>@lang</path>
+        <assertion>false()</assertion>
+        <description>this attribute should be encoded as xml:lang</description>
+    </rule>
+    <rule id="guidance-v1:3">
+        <path>/participating-org/@role</path>
+        <assertion>not($this='funding')</assertion>
+        <description>this value should be coded as "Funding"</description>
+    </rule>
+</ruleset>

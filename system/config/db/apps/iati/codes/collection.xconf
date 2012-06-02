@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<collection xmlns="http://exist-db.org/collection-config/1.0">
+<!-- index for the codelists -->
+    <index>
+        <fulltext default="none" attributes="false"/>
+        <!-- range indexes -->
+        <create qname="code" type="xs:string"/>
+        <create qname="@name" type="xs:string"/>
+        <create qname="@version" type="xs:string"/>
+        <create qname="@xml:lang" type="xs:string"/>
+    </index>
+</collection>

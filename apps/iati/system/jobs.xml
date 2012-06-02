@@ -1,0 +1,303 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?xml-stylesheet href="../../sys/xslt/jobs.xsl" type="text/xsl" ?>
+<jobs>
+    <job>
+        <area>download</area>
+        <task>implement background jobs</task>
+        <action>job scheduler implemented for ckan. download and OLAP tasks</action>
+        <comment>scheduler module missing from 2.0-tech-preview - download from trunk, changed the
+            build-properties file to include the scheduler and build - </comment>
+    </job>
+    <job>
+        <area>exist</area>
+        <task>problem with permissions</task>
+        <action>solved by removing logging</action>
+        <comment>logging is used to track response times esp for the query script - need to check
+            where the permissions problem is occuring</comment>
+    </job>
+    <job>
+        <area>exist</area>
+        <task>locking problem in Oxygen</task>
+        <action>transient - gone</action>
+        <comment>Oxygen warns that another user is accessing a file when there is no such user - I
+            think this was an artifact of database user creation </comment>
+    </job>
+    <job>
+        <area>exist</area>
+        <task>trashing</task>
+        <action>show-stopper</action>
+        <comment>exist thrashes for no reason - too many open files - problem for CKAN task sine the
+            current method of access to the registry requires reading every time to check on the
+            update dates. May be due to the httpclient module leaving files open - logs and code
+            passed to Wolfgang 20 May - switched to using expath http module for the json queries - this doesnt generate errors but as yet untried in bulk</comment>
+    </job>
+    <job>
+        <area>exist</area>
+        <task>unrequested shutdowns</task>
+        <comment>shutdowns occur randomly - may be associated with memory size - hepworth ok since
+            memory increased</comment>
+    </job>
+    <job>
+        <area>download</area>
+        <task>ckan refresh needs generalisation</task>
+        <comment>there is a maximum on 1000 results in the return from a search - currently this is
+            to way the list of packages is fetched - two fetches are used allowing a maximum of 2000
+            packages but I should fetch the number then batches of 1000. However there is promise of
+            an API which will allow search for updated packages so ok for the present</comment>
+    </job>
+    <job>
+        <area>download</area>
+        <task>ckan refresh needs dates fixing</task>
+        <comment>bypassed untill we get a full clean load</comment>
+    </job>
+    <job>
+        <area>update</area>
+        <action>attention to indexes and removing the updates to add attributes to the header has
+            improved performance</action>
+        <task>update runs slowly when doing the full update</task>
+    </job>
+    <job>
+        <area>validation</area>
+        <task>text in title and description should be cleaned of MS Word special characters</task>
+        <comment>fails in the pipeline so excluded- apart for cosmetic appearance in pages, these
+            characters cause problems in the RSS feeds</comment>
+    </job>
+    <job>
+        <area>api</area>
+        <task>text search needs implementing</task>
+        <action>done - works ok on the current test corpus </action>
+        <comment>the activity index needs lucene entries for text and description but performance is
+            poor - much better on trunk version</comment>
+    </job>
+    <job>
+        <area>validation</area>
+        <task>standalone validation needs reimplementing</task>
+        <action>done</action>
+        <comment>the version 1 service provides for download of an arbitrary activity set document
+            and subsequent validation - need to invent a package id</comment>
+    </job>
+    <job>
+        <area>olap</area>
+        <task>olap code is performing very slowly</task>
+        <action>inlining and evaling queries has resulted in major performance enhancement</action>
+        <comment>this uses eval using the paths in the olap definition but the log shows
+            exceptionally long run times for some queries - esp for the mining action - mine
+            attribute indicates which facets should use this approach</comment>
+    </job>
+    <job>
+        <area>olap</area>
+        <task>olap configuration should be corpus specific</task>
+    </job>
+    <job>
+        <area>download</area>
+        <task>activity timestamps need checking</task>
+        <comment>the question of how to tell if an activity needs updating still needs design work
+            to achive a reliable and efficient update. At least the registry should provide data at
+            the document level - preferably a single query will fetch all packages where the
+            referenced resource has changed since a specified date</comment>
+    </job>
+    <job>
+        <area>download</area>
+        <task>update strategy needs clarification</task>
+        <comment>looking like we can update insitu, then run the olap and switch over the olap files
+            - much the easiest approach and only a single server </comment>
+    </job>
+    <job>
+        <area>validation</area>
+        <task>activity validation on load</task>
+        <comment>the pipeline validates country and region codes so that the facets will only
+            contain codes from the codelist and transforms are written to be defensive and repair
+            some errors but a validation step should be used</comment>
+    </job>
+    <job>
+        <area>development</area>
+        <task>unit tests</task>
+        <comment> many more needed WO have been asked to help define test for api but nothing ever
+            produced. Need a simple special corpus and unit tests per module. Tests for the
+            functions in the general library modules are included</comment>
+    </job>
+    <job>
+        <area>validation</area>
+        <task>profile reports need work to be usable</task>
+    </job>
+    <job>
+        <area>validation</area>
+        <task>profile reports for an arbitrary collection of activities</task>
+        <comment>selection criteria passed as a parameter string aka query but no time for this
+            enhancement </comment>
+    </job>
+    <job>
+        <area>validation</area>
+        <task>updating rules and profiles and codelists</task>
+        <comment>no admin interface available - updates only to the XML files themselves</comment>
+    </job>
+    <job>
+        <area>development</area>
+        <task>util scripts need cataloging</task>
+        <comment>No util scripts currently needed</comment>
+    </job>
+    <job>
+        <area>olap</area>
+        <task>facet /dimension terminology is confusing</task>
+    </job>
+    <job>
+        <area>download</area>
+        <task>in an updated cache, the list of facet values is derived from the cache</task>
+        <comment> - during update this is not available so has to be computed using distinct-values
+            instead - but this may be low priority since once olap is recomputed the facet views
+            will be work</comment>
+    </job>
+    <job>
+        <area>development</area>
+        <task>indexes still not fully used due to use of variables - approach needs to be reviewed </task>
+        <action>functions added and code inlined where appropriate</action>
+        <comment>major change in coding policy</comment>
+    </job>
+    <job>
+        <area>download</area>
+        <task>interpreted configurable pipeline has been replaced by a hardcoded module
+            (pipeline1.xqm) but now this function will fail if any step fails - needs a catch() and
+            logging of the error</task>
+        <comment> can revert to the evaled pipeline when checked - if performance looks OK</comment>
+    </job>
+    <job>
+        <area>deployment</area>
+        <action>done</action>
+        <task>document the approach</task>
+    </job>
+    <job>
+        <area>download</area>
+        <task>download of activitySet directly from a source rather than via the registry </task>
+        <action>done</action>
+        <comment> </comment>
+    </job>
+    <job>
+        <area>download</area>
+        <task>download and unpacking of zipped activitySet files</task>
+    </job>
+    <job>
+        <area>download</area>
+        <task>the pipeline error file should be local to a corpus</task>
+    </job>
+    <job>
+        <area>deployment</area>
+        <action>done</action>
+        <task>include the virtual host file in the system data and deployment notes</task>
+    </job>
+    <job>
+        <area>olap</area>
+        <task>facets are named elements rather than the name being an attribute of a generic facet
+            or facet group</task>
+        <comment>this design is a problem for validation since it depends on the olap code and
+            selection requires the use of name() or eval. This format was determined by the API spec
+            where groups should have been generic with a name attribute - a fix would require a
+            change to the API spec and AidView. However performance is adequate</comment>
+    </job>
+    <job>
+        <area>ui</area>
+        <task>URL processing and dispatch is rather complex</task>
+        <comment>This approach needs documentation - in the design doc</comment>
+    </job>
+    <job>
+        <area>deployment</area>
+        <action>full block added to /db/apps/iati</action>
+        <task>robots.txt file needed</task>
+    </job>
+    <job>
+        <area>deployment</area>
+        <action>done</action>
+        <task>include the revised config.xml file in the resource export </task>
+    </job>
+    <job>
+        <area>currency</area>
+        <task>document currency conversion rate table and its creation</task>
+        <comment>the conversion of the table on the OECD site -(see the pipeline for reference to
+            the original data file) - one off process to extract and create the conversion table,
+            adding currency codes in place of country names to convert to 2010-based conversion
+            rates </comment>
+    </job>
+    <job>
+        <area>download</area>
+        <task>json to xml</task>
+        <action>Ok for now</action>
+        <comment>this uses my own hack conversion which seems Ok for the CKAN api but should be
+            replaced by a Java function when that is available</comment>
+    </job>
+    <job>
+        <area>download</area>
+        <task>download url as activitySet id is problematic</task>
+        <action>reworked to use package - URL language simplified as a result </action>
+        <comment>activitySets are ided in the activity by the downloadURL. This was used because not
+            all activitySets will come from the repository. However this id is not stable, and has
+            to be passed as a query parameter. Propose to change to package and invent a package id
+            for directly imported activity sets as used in the validator </comment>
+    </job>
+    <job>
+        <area>admin</area>
+        <task>need a task to export a corpus and its olap </task>
+        <action>in admin.xqm but not exposed to the UI  </action>
+        <comment>need to generate a resource file to pass to export - need one in each
+            corpus</comment>
+    </job>
+    <job>
+        <area>browse</area>
+        <action>done</action>
+        <task>missing path to the download XML -activity set screen is wrong</task>
+    </job>
+    <job>
+        <area>deployment</area>
+        <task>document the increase in memory size </task>
+    </job>
+    <job>
+        <area>olap</area>
+        <task>full index access to codes needs the current codelists to be cached</task>
+        <action>done</action>
+        <comment>a separate collection, refreshed from the code collection and used in validation,
+            the pipeline and olap</comment>
+    </job>
+    <job>
+        <area>download</area>
+        <task>delete activities in a set or for a host</task>
+        <action>done - much faster too</action>
+        <comment> use of @iati-ad:live may be superfluous now and certainly complicates things -
+            test a single activity deletion</comment>
+    </job>
+    <job>
+        <task>currency conversion still not using the indexes full</task>
+        <comment>but it does when called outside pipeline1?? - stil, pipeline performance is
+            acceptable</comment>
+    </job>
+    <job>
+        <task>logging</task>
+        <comment>this was breaking the public scripts - app level logging useful for monitoring response times in the query interface</comment>
+    </job>
+    <job>
+        <task>corpus and olap data could be combined </task>
+        <comment>current design is messy - but whether to structure by corpus/dataset or
+            dataset/corpus - later means that the index configurations dont need to be replicated .
+            Only an issue if multiple corpuses are going to be created - not important now
+        </comment>
+    </job>
+    <job>
+        <area>backup</area>
+        <action>/db/apps/sys/xq/export-2 does the resource file driven zip</action>
+        <task>devise and document backup facilities</task>
+        <comment>backup.xml document started - export script stores files selected by the resource
+            file outside the db - in /var/www/backups where it is accessible for download </comment>
+    </job>
+    <job>
+        <area>codes</area>
+        <task>access to current version</task>
+        <action>leave</action>
+        <comment>access to the current version of a code list is to the cached version. This is the
+            version marked as current in the metadata view. This allows new versions to be created
+            and accessed via a full version/../lang/.. path. Running the cache operation will copy
+            the latest verions of all list to cache/_codes.</comment>
+    </job>
+    <job>
+        <area>browsing</area>
+        <task>pagination of search results fails</task>
+        <action>fixed</action>
+        <comment>uses the wrong path in the paginator call</comment>
+    </job>
+</jobs>

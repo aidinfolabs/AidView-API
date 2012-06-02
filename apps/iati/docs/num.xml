@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<TestSet>
+    <testName>num  tests for IATI</testName>
+    <description>
+        This tests formatting of numbers using a number format
+    </description>
+    <author>Chris Wallace</author>
+    <prolog>
+        import module namespace num = "http://kitwallace.me/num" at "/db/lib/num.xqm";
+    </prolog>
+    <test>
+        <task>simple test</task>
+        <code>
+            num:format-number(xs:double(12345),"$,000")
+        </code>
+        <expected/>
+    </test>
+</TestSet>

@@ -1,0 +1,150 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<div id="rulesets">
+    <h1>Rulesets</h1>
+    <h2>Introduction</h2>
+    <div>In this prototype, the original <a href="http://data.aidinfolabs.org/?type=rule&amp;mode=view">set of rules</a> used in the production version for activity validation have been
+        improved: <ul>
+            <li>Compliance rules which applied to the whole document have been refined and now may
+                apply to any sequence of nodes</li>
+            <li>Rules may also define a precondition. </li>
+            <li>Validation rules have been reformated and split into <a href="/data/ruleset">multiple
+                    rulesets</a> which fulfil different purposes</li>
+            <li>One or more rulesets can be selected when validating an activity.</li>
+            <li>Rule behaviour has been generalised and is defined in a generic XQuery module
+                (rules.xqm)</li>
+            <li>A ruleset may be created for any document so organisation documents can be validated
+                in the same way.</li>
+        </ul>
+    </div>
+    <h2>Ruleset structure</h2>
+    <div>
+        <table border="1">
+            <tr>
+                <th>Ruleset properties</th>
+                <td>
+                    <table>
+                        <tr>
+                            <th>@name</th>
+                            <td>Unique ruleset name</td>
+                        </tr>
+                        <tr>
+                            <th>@version</th>
+                            <td>To align with the IATIStandard version</td>
+                        </tr>
+                        <tr>
+                            <th>@xml:lang</th>
+                            <td>Language code - only English descriptions are in used</td>
+                        </tr>
+                        <tr>
+                            <th>@root</th>
+                            <td>The root element for these rules</td>
+                        </tr>
+                        <tr>
+                            <th>description</th>
+                            <td>An html fragment to describe the purpose of the ruleset.</td>
+                        </tr>
+                    </table>
+                </td>
+            </tr>
+            <tr>
+                <th>Rule properties</th>
+                <td>
+                    <table>
+                        <tr>
+                            <th>path</th>
+                            <td>required</td>
+                            <td>an absolute or relative path. Paths ending in * are applied at to
+                                the sequence of nodes, otherwise the path defines a node</td>
+                        </tr>
+                        <tr>
+                            <th>pre</th>
+                            <td>optional</td>
+                            <td>an XPath expression which determines if the rule should be applied *</td>
+                        </tr>
+                        <tr>
+                            <th>codelist</th>
+                            <td>optional</td>
+                            <td>the name of an IATI codelist against which a node value is to be
+                                checked</td>
+                        </tr>
+                        <tr>
+                            <th>type</th>
+                            <td>optional</td>
+                            <td>the XPath name of a type, for example xs:date</td>
+                        </tr>
+                        <tr>
+                            <th>assertion</th>
+                            <td>optional</td>
+                            <td>the XQuery expression to be evaluated to determine if the node
+                                passes the rule.*</td>
+                        </tr>
+                        <tr>
+                            <th>description</th>
+                            <td>required for assertions, optional otherwise</td>
+                            <td>A natural language description of the rule, especially of the
+                                pre-condition and assertion. This is expressed in the same sense as
+                                the rule. If the rule fails, this condition will not be met </td>
+                        </tr>
+                    </table>
+                </td>
+            </tr>
+            <tr>
+                <th>* Context variables</th>
+                <td>
+                    <table>
+                        <tr>
+                            <th>$doc</th>
+                            <td>Bound to the whole document (iati-activity)</td>
+                        </tr>
+                        <tr>
+                            <th>$this</th>
+                            <td>Bound to the node(s) identified by the path</td>
+                        </tr>
+                    </table>
+                </td>
+            </tr>
+        </table>
+    </div>
+    <h2>Background</h2>
+    <div>The IATI standard is defined in terms of an <a href="http://www.w3.org/XML/Schema">XML
+            schema</a> + additional rules described in words in documents. Rules in addition to
+        those implicit in the XML schema are needed : <ul>
+            <li>To avoid imposing an ordering on elements, the XML schema has to be lax, and is thus
+                unable to express constraints on the cardinality of elements, for example that an
+                activity requires a title. </li>
+            <li>External codelists are used extensively in the specification and, unless these are
+                included in the XML schema, the values of codes cannot be validated</li>
+            <li>Rules such as the requirement that percentages sum to 100 cannot be expressed in XML
+                Schema. Neither can rules which are conditional on the value of other elements in
+                the document </li>
+        </ul>
+    </div>
+    <div>Furthermore, some rules depend on the usage to which the activity data is to be put e.g.
+        the requirement for sector data if sector analysis is to be performed. This leads to the
+        view that validation is relative to need rather than being an absolute condition. For
+        example, in order for a publisher to develop their publishing process, the completeness of
+        the data will depend on the stage in development. </div>
+    <div>Other schema languages such as <a href="http://www.schematron.com/">Schematron</a> and the
+        future XML Schema Version 2.0 improve the ability of the schema language to express
+        constraints. However the reporting of errors and the availability of an error analysis so
+        that the validation of multiple activities can be combined and assessed depends on external
+        schema engines. It may be possible to switch to a different schema language in future, but
+        in order to make progress, a local rule-based approach using XQuery was adopted for this
+        project. </div>
+    <div>The current approach uses a set of rules which are applied during a top-down traverse of
+        the document (iati-activity) so that rule violations can be notified as close as possible to
+        the offending element or attribute. The rule-based approach makes composition of rules
+        possible although processing speed may suffer.</div>
+    <h2>Work to do</h2>
+    <ul>
+        <li>The current rule definition goes most of the way to providing an XML format for the
+            spreadsheet version of the IATI Standard document and could be expanded to meet this
+            need.</li>
+        <li>Rulesets, especially the Standard set, need full checking</li>
+        <li>Some compliance rules may be difficult to format into this framework </li>
+        <li>Rules may need parameterisation - eg to specify the length of a title or periods for
+            planned-disbursement. This could be done with the addition of a parameter group but
+            perhaps versioning a ruleset may be adequate. </li>
+        <li>distinction between rules applied to a node and rules applied to a sequence is clumsy and needs adjustment</li>
+    </ul>
+</div>

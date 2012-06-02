@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<pipeline name="pipeline1">
+    <description>This is the pipeline used to pre-process activities for use in AidView</description>
+    <step>
+        <description>If no @vocab, then default to "DAC"</description>
+        <xquery>pipeline:add-default-sector-vocab($activity)</xquery>
+    </step>
+    <step>
+        <description>Convert all values to USD using currency conversion rates derived from <a href="http://www.oecd.org/document/11/0,3746,en_2649_34447_1894347_1_1_1_1,00.html">DEC</a> as at 2011-10-01.  Attribute iati-ad:value is added.  </description>
+        <xquery>pipeline:convert-to-USD($activity)</xquery>
+    </step>
+    <step>
+        <description>Using the USD values converted in the previous step, compute  ... and add this to iati-activity as attribute iati-ad:value</description>
+        <xquery>pipeline:add-project-value($activity)</xquery>
+    </step>
+    <step>
+        <description>Where there are multiple sectors given for a specific vocabulary, apportion the total project value in proportion to the sector percentage. Where no percentages are give, apportion equally</description>
+        <xquery>pipeline:apportion-sector-value($activity)</xquery>
+    </step>
+    <step>
+        <description>
+            <a href="/data/codelist/SectorCategory">DAC 3 digit sector codes </a> are used in AidInfo as SectorCategories.  SectorCategory codes are associated with each <a href="/data/codelist/Sector">DAC-5 digit sector codes</a>in the Sector codelist.  Create the new DAC-3 sectors with a vocabulary of "DEC-3" and sum the values in the set of DEC-5 codes which belong to the same DEC-3 code </description>
+        <xquery>pipeline:add-DAC-3-sectors($activity)</xquery>
+    </step>
+    <step>
+        <description>Where there is more than one country, the total project value is apportioned to each country according to the percentage.</description>
+        <xquery>pipeline:apportion-country-value($activity)</xquery>
+    </step>
+    <step>
+        <description>Where there is more than one region, the total project value is apportioned to each region according to the percentage.</description>
+        <xquery>pipeline:apportion-region-value($activity)</xquery>
+    </step>
+    <step>
+        <description>Participating-org with a role of Funding defines the Funder organisation.  Add a new attribute iati-ad:funder to either that paricipating-org or the reporting-org with the funding organisations code.  This is used in indexing.</description>
+        <xquery>pipeline:add-org-key($activity)</xquery>
+    </step>
+    <step>
+        <description>For some activities, location data is held separately and needs to be merged in with the activity data</description>
+        <xquery>pipeline:add-wo-locations($activity)</xquery>
+    </step>
+    <step>
+        <description>Some activities contain special word characters for en and em dashes, curly quotes etc.  This step replaces these characters </description>
+    </step>
+</pipeline>

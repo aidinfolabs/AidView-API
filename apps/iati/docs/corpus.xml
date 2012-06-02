@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<div id="corpus">
+    <h1>Corpus</h1>
+    <div>For development reasons, data on activities is divided into 'corpus' sections. Each corpus contains the master list of activitySets, 
+        the collection of activities and the <a href="/data/doc/OLAP">OLAP</a>
+    </div>
+    <div>Initially there will be four corpuses - 3 public and one private. The private corpus vstore is used for casual loading and validation. Files and collections are publicly writeable to supprt the ad-hoc validation</div>
+    <div>The corpus descriptor contains the reference for the pipeline for that corpus.  Currently vstore has no pipeline defined whilst the others use the only defined pipeline.</div>
+</div>

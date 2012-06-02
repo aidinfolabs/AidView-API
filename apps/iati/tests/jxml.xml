@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<TestSet>
+    <testName>jxml tests for IATI</testName>
+    <description>
+        This tests the functionality of the jxml module - 
+    </description>
+    <author>Chris Wallace</author>
+    <prolog>
+        import module namespace jxml = "http://kitwallace.me/jxml" at "/db/lib/jxml.xqm";
+    </prolog>
+    <test>
+        <task>convert simple Json</task>
+        <code>
+            <![CDATA[
+ let $json := '{
+"employees": [
+{ "firstName":"John" , "lastName":"Doe" },
+{ "firstName":"Anna" , "lastName":"Smith" },
+{ "firstName":"Peter" , "lastName":"Jones" }
+]
+}'
+
+return jxml:convert($json,())
+               
+            ]]></code>
+        <expected>
+            <div>
+                <div>
+                    <employees>
+                        <div>
+                            <firstName>John</firstName>
+                            <lastName>Doe</lastName>
+                        </div>
+                        <div>
+                            <firstName>Anna</firstName>
+                            <lastName>Smith</lastName>
+                        </div>
+                        <div>
+                            <firstName>Peter</firstName>
+                            <lastName>Jones</lastName>
+                        </div>
+                    </employees>
+                </div>
+            </div>
+        </expected>
+    </test>
+</TestSet>

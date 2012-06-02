@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<codelist name="ActivityDateType" date-last-modified="2012-03-02T16:37:03.457Z" version="1.0" xml:lang="es">
+    <ActivityDateType>
+        <code>end-actual</code>
+        <name>La fecha de finalización real, como la fecha del último desembolso</name>
+    </ActivityDateType>
+    <ActivityDateType>
+        <code>end-planned</code>
+        <name>La fecha de finalización prevista según consta en la documentación del proyecto</name>
+    </ActivityDateType>
+    <ActivityDateType>
+        <code>start-actual</code>
+        <name>etc via Google Translate</name>
+    </ActivityDateType>
+    <ActivityDateType>
+        <code>start-planned</code>
+        <name>The planned start date as recorded in project documentation. Can be date of signature of activity agreement or approval by relevant body</name>
+    </ActivityDateType>
+</codelist>

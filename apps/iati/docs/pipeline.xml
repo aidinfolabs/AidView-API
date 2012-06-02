@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<div id="pipelines">
+    <h1>Pipelines</h1>
+    <div>On loading, each activity is passed through a number of transformations which augment the
+        activity document with computed data in the iati-ad namespace. Augemented data include
+        transaction values and totals normalised to USD 2010 values, added keys, proportioned values
+        over multiple countries, regions etc.</div>
+    <div>It was envisaged that this would be configurable as a pipeline of steps and the pipeline.xqm
+        module implements this pipeline, using the supplied pipeline configuration file to determine the
+        sequence and action of each step. As of May 2012, this pipeline is actually hard coded in
+        the pipeline1.xqm module for efficiency reasons/</div>
+    <div>Which (if any) pipeline is used is defined in the corpus index entry</div>
+</div>

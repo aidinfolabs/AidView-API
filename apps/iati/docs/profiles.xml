@@ -1,0 +1,71 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<div id="profiles">
+    <h1>Profiles</h1>
+    <h2>Introduction</h2>
+    <div>Profiles define the criteria for acceptance of a set of documents.  
+    </div>
+    <h2>Profile structure</h2>
+    <div>
+        <table border="1">
+            <tr>
+                <th>Profile properties</th>
+                <td>
+                    <table>
+                        <tr>
+                            <th>@name</th>
+                            <td>Unique profile name</td>
+                        </tr>
+                        <tr>
+                            <th>@root</th>
+                            <td>The document type : activity, organisation etc. </td>
+                        </tr>
+                        <tr>
+                            <th>description</th>
+                            <td>An html fragment to describe the purpose of the profile.</td>
+                        </tr>
+                    </table>
+                </td>
+            </tr>
+            <tr>
+                <th>Ruleset properties</th>
+                <td>
+                    <table>
+                        <tr>
+                            <th>name</th>
+                            <td>the name of the ruleset to be used. The root of the rule set should be the same as the root of the profile</td>
+                        </tr>
+                        <tr>
+                            <th>threshold</th>
+                            <td>an integer 0 - 100. The document set as a whole will pass if the percentage of documents satisfying all the rules in this ruleset is equal to or exceeds this threshold</td>
+                        </tr>
+                        <tr>
+                            <th>rules</th>
+                            <td>
+                                <table>
+                                    <tr>
+                                        <td>@id</td>
+                                        <td>the rule identifier</td>
+                                    </tr>
+                                    <tr>
+                                        <td>@threshold</td>
+                                        <td>the threshold for this individual rule. By default this is 100</td>
+                                    </tr>
+                                </table>
+                            </td>
+                        </tr>
+                    </table>
+                </td>
+            </tr>
+        </table>
+    </div>
+    <h2>Issues</h2>
+    <div>
+        <ul>
+            <li>The acceptance of the ruleset as a whole should be affected by the specific rules but at present it does not. It should because one use of the individual rules is to remove a specific rule by setting its threshold to zero</li>
+            <li>Currently rules are only pass/fail - a rule which is not applied either because there are no hits on the rule or because the precondition of a rule fails, are counted as passes.  Really need to move to a tri-state logic - pass/fail/not applicable</li>
+            <li>Error report contains only errors but we need sucesses to in order to produce a meaningful report</li>
+            <li>Profile analysis page includes all the rules in the profile - should optionally show only the failed rules</li>
+            <li>Only the sample activities are analysed - activity set selection to be added </li>
+        </ul>
+    </div>
+</div>

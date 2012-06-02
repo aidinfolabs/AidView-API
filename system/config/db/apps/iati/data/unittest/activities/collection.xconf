@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<collection xmlns="http://exist-db.org/collection-config/1.0">
+    <index xmlns:iatix="http://tools.aidinfolabs.org/api/AugmentedData">
+        <fulltext default="none" attributes="false"/>
+        <create qname="iati-identifier" type="xs:string"/>
+        <create qname="@iatix:activitySet" type="xs:string"/>
+        <create qname="@iatix:country" type="xs:string"/>
+        <create qname="@iatix:region" type="xs:string"/>
+        <create qname="@iatix:sector" type="xs:string"/>
+        <create qname="@iatix:category" type="xs:string"/>
+        <create qname="@iatix:funder" type="xs:string"/>
+        <create qname="@iatix:org" type="xs:string"/>
+        <create qname="@iatix:transaction-type" type="xs:string"/>
+        <create qname="@iatix:transaction-date" type="xs:string"/>
+        <lucene>
+            <analyzer class="org.apache.lucene.analysis.standard.StandardAnalyzer"/>
+            <text qname="title"/>
+            <text qname="description"/>
+        </lucene>
+    </index>
+</collection>

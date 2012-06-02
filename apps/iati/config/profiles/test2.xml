@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<profile name="test2" root="activity">
+    <description>A test profile based on the compliance ruleset</description>
+    <ruleset name="compliance1" threshold="80">
+        <rule id="compliance1:5" threshold="50"/>
+        <rule id="compliance1:9" threshold="40"/>
+        <rule id="compliance1:14" threshold="40"/>
+    </ruleset>
+</profile>

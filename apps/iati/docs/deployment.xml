@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<div id="deployment">
+    <h1>Deployment</h1>
+    <h2>Resources</h2>
+    <ul>
+        <li>
+            <a href="http://exist-db.org">Exist documentation</a>
+        </li>
+        <li>A spreadsheet describing the<a href="https://docs.google.com/spreadsheet/ccc?key=0Ap_pOl9XgkPodFVuYVZnX0w0TlBxY215OS1zMF8xdXc#gid=0">  directories and files</a> in the eXist 2.0 distribution - (by Chris Wallace - use with caution)</li>
+    </ul>
+    <h2>Pre-requisites</h2>
+    <div> The current version is running on eXist <s>version 2.0-tech-preview</s> build from trunk
+        so that the scheduler module can be included. Unable to generate an installer so the current
+        version is the full buult system. The notes below assume the availability of a installable
+        jar. <ol>
+            <li>wget to fetch resources</li>
+            <li>Java 6 - <s>using opensdk</s> using OracleJDK 1.6</li>
+            <li>Apache webserver implements the virtual hosts. </li>
+            <li>sftp to move files between client and server</li>
+            <li>zip</li>
+            <li>you also need the same version of eXist (2.0) running locally since the java client
+                is used to set permissions and passwords, and install applications </li>
+        </ol>
+    </div>
+    <h2>Deployment</h2>
+    <div>This installs the application into /db/apps/iati, system tools into /db/apps/sys , common
+        library modules into /db/lib and index configuration files into
+        /db/system/config/db/apps/iati. </div>
+    <ol>
+        <li>[server] download the jar file from the <a href="http://exist-db.org">eXist site</a>
+        </li>
+        <li>[server] install exist : run java -jar {jarfile} -p {absoluteinstallpath} - make sure to
+            use the full path here because it becomes EXIST_HOME - I've been using
+            /usr/local/exist</li>
+        <li>[client] unpack the application zip </li>
+        <li>[ erver]the distributed configuration file needs some changes - in
+            particular to allow inclusion of some modules which are excluded by default. There is a
+            copy of the current conf.xml file in the distribution in
+            (/db/apps/iati/system/conf.xml).  Replace EXIST_HOME/conf.xml with this file </li>
+        <li>[server] to define the virtual host there is a apache file
+            ((/db/apps/iati/system/datdev.aidinfolabs.org.conf). In CENTOS this file would be
+            located in /etc/httpd/conf.d</li>
+        <li>[server] to increase the memory available to the application, edit the file {$EXIST_HOME}/bin/function.d/eXist-settings.sh</li>
+        <li>[server] cd to the install directory </li>
+        <li>[server] start the httpd service if not already </li>
+        <li>[server] start the database : bin/startup.sh</li>
+        <li>[client] use the java client to access the running database, logging in as admin with a
+            blank password - change the admin password.</li>
+        <li>[client] also add the db user see config.xqm.</li>
+        <li>[server] run the post-install script (in /db/apps/iati/xquery) -
+             this creates the data and olap collections  and index files for  each corpus defined in corpusindex, sets some public
+            permissions and reindexes</li>
+        <li>[server] check that the data directories and permissions - permissions can be set using the java client</li>
+        <li>[client] review the constants in config.xqm - for admin purposes there is the IP address
+            there.  If you have installed to any other directory than /db/apps/iati, you will need to
+            update this module to change $config:base to the new collection.</li>
+        <li>The application is now deployed.</li>
+    </ol>
+</div>

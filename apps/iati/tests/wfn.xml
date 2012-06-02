@@ -1,0 +1,108 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<TestSet>
+    <testName>wfn tests for IATI</testName>
+    <description>
+        This tests the functionality of the wfn emodule - 
+    </description>
+    <author>Chris Wallace</author>
+    <prolog>
+        import module namespace wfn= "http://kitwallace.me/wfn" at "/db/lib/wfn.xqm";
+    </prolog>
+    <test>
+        <task>format number in thousands</task>
+        <code>
+            wfn:value-in-ks(1234)
+        </code>
+        <expected>
+            <span>1.234k</span>
+        </expected>
+    </test>
+    <test>
+        <task>format number in millions</task>
+        <code>
+            wfn:value-in-ks(1234567)
+        </code>
+        <expected>
+            <span>1.235m</span>
+        </expected>
+    </test>
+    <test>
+        <task>format number in billions</task>
+        <code>
+            wfn:value-in-ks(1234567890)
+        </code>
+        <expected>
+            <span>1.235b</span>
+        </expected>
+    </test>
+    <test>
+        <task>pagination</task>
+        <code>
+            wfn:paging-with-path2("http:host.com/page",2,5,20)          
+        </code>
+        <expected>
+            <div class="paging">Page         
+ <a href="http:host.com/page?start=1&amp;pagesize=5">Previous</a> |  <span>1</span> | 
+ <a href="http:host.com/page?start=6&amp;pagesize=5">2</a> | 
+ <a href="http:host.com/page?start=11&amp;pagesize=5">3</a> | 
+<a href="http:host.com/page?start=16&amp;pagesize=5">4</a> | 
+<a href="http:host.com/page?start=7&amp;pagesize=5">Next</a>
+            </div>
+        </expected>
+    </test>
+    <test>
+        <task>pagination</task>
+        <code>
+            wfn:paging-with-path2("http:host.com/page",30,20,200)          
+        </code>
+        <expected/>
+    </test>
+    <test output="text">
+        <task>element to CSV</task>
+        <code>
+<![CDATA[
+ wfn:element-to-csv(<table><row><a>5</a><b>6</b></row></table>) 
+]]></code>
+        <expected>a,b 5,6</expected>
+    </test>
+    <test>
+        <task>table to HTML</task>
+        <code>
+<![CDATA[
+let $table := <table><row><a>5</a><b>6</b></row></table>            
+return wfn:table-to-html($table)
+]]></code>
+        <expected>
+            <table border="1" class="sortable">
+                <thead>
+                    <tr>
+                        <th>a</th>
+                        <th>b</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>5</td>
+                        <td>6</td>
+                    </tr>
+                </tbody>
+            </table>
+        </expected>
+    </test>
+    <test output="text">
+        <task>clean text of MS characters</task>
+        <code>
+            let $text := 
+            
+      concat("This text contains a number of MS Word special characters which should be replaced.  These include :",
+            
+            codepoints-to-string((226,128,147)), "( endash) ", codepoints-to-string((226,128,148))," (em dash) " , codepoints-to-string((226,128,172)) ,"(ellipsis)
+            
+            and others")
+            
+            return wfn:clean-text($text)
+            
+        </code>
+        <expected>This text contains a number of MS Word special characters which should be replaced.  These include :–( endash) — (em dash) …(ellipsis)                          and others</expected>
+    </test>
+</TestSet>

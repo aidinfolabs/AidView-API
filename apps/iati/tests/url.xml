@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<TestSet>
+    <testName>url tests for IATI</testName>
+    <description>
+        This tests the functionality of the url module - 
+    </description>
+    <author>Chris Wallace</author>
+    <prolog>
+        import module namespace url = "http://kitwallace.me/url" at "/db/lib/url.xqm";
+    </prolog>
+    <test>
+        <task>get the current url</task>
+        <code>url:get-context()</code>
+        <expected>
+            <context>
+                <testfile qs="true">/db/apps/iati/tests/url.xml</testfile>
+                <_nparam>1</_nparam>
+                <_signature/>
+            </context>
+        </expected>
+    </test>
+    <test>
+        <task>create a menu </task>
+        <code>
+            <![CDATA[
+ <div>{url:path-menu("/A/a/B/b",("x","y"),())}</div>           
+            
+            ]]></code>
+        <expected>
+            <div>
+                <a href="/A">Home</a> &gt; 
+              <a href="/A/a">a</a> &gt; 
+              <a href="/A/a/B">B</a> &gt; 
+              <span>b</span> &gt; 
+              <a href="/A/a/B/b/x">x</a> | 
+              <a href="/A/a/B/b/y">y</a>
+            </div>
+        </expected>
+    </test>
+</TestSet>

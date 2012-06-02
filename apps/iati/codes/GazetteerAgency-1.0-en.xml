@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<codelist name="GazetteerAgency" date-last-modified="2012-03-02T16:37:03.457Z" version="1.0" xml:lang="en">
+    <GazetteerAgency>
+        <code>GEO</code>
+        <name>Geonames.org</name>
+    </GazetteerAgency>
+    <GazetteerAgency>
+        <code>NGA</code>
+        <name>National Geospatial-Intelligence Agency</name>
+    </GazetteerAgency>
+</codelist>

@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<div id="codelist">
+    <h1>Codelists</h1>
+    <h2>Background</h2>
+    <div>Trial metadata, versions and languages  
+    </div>
+    <h2>Examples</h2>
+    <ul>
+        <li>
+            <a href="/data/codelist">Codelist Index</a>
+        </li>
+        <li>
+            <a href="/data/codelist.xml">Codelist Index</a> as xml </li>
+        <li>
+            <a href="/data/codelist/ActivityDateType/metadata">ActivityDateType metadata</a> Metadata for mocked-up example with multiple versions and languages</li>
+        <li>
+            <a href="/data/codelist/ActivityDateType">Current ActivityDateType codelist</a>
+        </li>
+        <li>
+            <a href="/data/codelist/ActivityDateType.xml">Current ActivityDateType codelist as xml</a>
+        </li>
+        <li>
+            <a href="/data/codelist/Country/metadata">Country</a> an ISO code with source data</li>
+        <li>
+            <a href="/data/codelist/Country/rules">Country</a>rules which use the Country code</li>
+    </ul>
+    <h2>Related Documents</h2>
+    <ul>
+        <li>
+            <a href="https://docs.google.com/document/d/1IvyQL7H36vh7L5APf_VAR0d9GcslmpCChLBky0iZOpI/edit">Codelist Review</a>  by Chris Wallace following meeting in Manchester 27 Feb</li>
+    </ul>
+</div>

@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<profile name="test1" root="activity">
+    <description>A profile using the standard set - a couple of rules with lower thresholds</description>
+    <ruleset name="standard-1.0" threshold="80">
+        <rule id="standard-1.0:5" threshold="60"/>
+        <rule id="standard-1.0:53" threshold="40"/>
+    </ruleset>
+    <ruleset name="guidance-1.0" threshold="100"/>
+</profile>

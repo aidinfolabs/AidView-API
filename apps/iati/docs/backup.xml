@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<div id="backup">
+    <h1>Backup policy</h1>
+    <div>(under development) </div>
+    <h2>Source backup</h2>
+    <div>A descriptor file defines all code and other resources. This file is used by an export
+        script to both view the resouces and their descriptions, and to zip the resources up. The
+        zip file is stored in /var/www/backups.  An export should be run before changes to code. The
+        link to the resources is in /admin </div>
+    <div>only the last backup is stored on this server- backup elsewhere for longer periodseg using
+        wget </div>
+    <div>Restore from this backup requires unzipping the archive locally and selectively restoring
+        scripts or data. </div>
+    <div>There is a case for using the eXist packaging facility here. </div>
+    <h2>Corpus data backup</h2>
+    <div>There is a corpus-specific resource file for each corpus which is used to zip up the corpus
+        data files in the same way. This backup can be done after each major update to the corpus
+        and then stored off-server.</div>
+    <h2>Full file level backup</h2>
+    <div>The admin panel supports manual backup, either full or incremental. The resultant backup
+        can be downloaded via the path {host}:8080/exist/admin/backups/{version}.zip . The files are
+        stored in the filestore in directory $EXIST_HOME/webapp/WEB-INF/data/export </div>
+    <div>Automated backups could be done using cron and the $EXIST_HOME/bin/backup.sh script </div>
+    <div>see exist-org for explanation of the restore</div>
+    <h2>Low-level backup</h2>
+    <div>2.0 has a lowlevel backup of the raw database files  . This zips the
+        raw database files and stores in $EXIST_HOME/webapp/WEB-INF/data/backups. </div>
+    <div>A restore requires saving the current files in the $EXIST_HOME/webapp/WEB-INF/data
+        directory, finding a suitable backup to restore, unzipping the backup file into the data
+        directory and restarting. [at present this is an undocumented feature of 2.0 and there
+        should be scripts to do this - not sure what happens to the fs (binary file) directory in
+        this] </div>
+    <h2>Server backup</h2>
+    <div>Should be configured on ElasticHosts VPS</div>
+</div>

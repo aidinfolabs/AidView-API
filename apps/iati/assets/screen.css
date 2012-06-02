@@ -1,0 +1,91 @@
+body {
+    background-color:#FFFDFF;
+    padding-right: 20px;    padding-left: 20px; 
+}
+
+body .admin {background-color:#FFCCCC;}
+
+a.external {
+    background-image: url('../assets/Icon_External_Link.png');
+    padding-right: 12px;
+    text-decoration: none;
+    background-position: right;
+    background-repeat:no-repeat;
+}
+
+a img {
+    border:none;
+}
+a {
+    text-decoration:none;
+    color: #11E;
+}
+
+a:hover {color: red}
+
+a:visited {
+    color: #59A;
+}
+h1,h2,h3 {
+    font-family:arial, helvetica, sans-serif;
+    color: #055;
+    margin-top:10px;
+    margin-bottom:10px;
+}
+h1 {
+    font-size:18pt;
+    margin-bottom:10px;
+}
+h2 {
+    font-size: 16pt;
+}
+h3 {
+    font-size:14pt;
+}
+
+div {margin-bottom: 8px;}
+
+th {text-align: left;}
+
+.big table {padding-left:50px;}
+.big th {
+    font-size:14pt;
+    font-weight: lighter;
+    font-style: italic;
+    text-align:left;
+ }
+.big th, td {padding-right:30px; 
+}
+.big td {
+    font-size:14pt;
+    text-align: left;
+}
+
+.level2 {border: solid #000 3px;}
+.level3 {border: solid #111 2px;}
+.level4 {border: solid #222 1px;}
+
+ .fail {background-color:red;}
+ .pass {background-color:green}
+
+.nav {font-family:Zapf-Chancery, cursive;  padding-bottom:5px; border-bottom: solid 2px; background: #eee;}
+.nav span {font-size:14pt}
+.nav a {font-size:14pt}
+.nav a,span {padding:5px;}
+
+span {padding-left:5px}
+
+.good {background-color:lightgreen}
+.warn {background-color:orange;}
+.error {background-color:salmon;}
+.missing {background-color:yellow;}
+.info {background-color:lightgreen}
+
+.left {float:left;}
+.right{float: right;}
+.full {float:none;}
+
+.activity th {text-align:left}
+.activity a {padding-right: 3px;}
+
+.bar {background-color:#ddd;}
