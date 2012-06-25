@@ -1,0 +1,4 @@
+<collection xmlns="http://exist.sourceforge.net/NS/exist" name="/db/apps/logger/data/iati-p" version="1" owner="admin" group="dba" mode="755" created="2011-11-20T23:07:52.717Z">
+    <resource type="XMLResource" name="log.xml" skip="no" owner="admin" group="dba" mode="755" created="2011-11-21T14:52:48.818Z" modified="2011-11-24T12:59:37.936Z" filename="log.xml" mimetype="text/xml"/>
+    <subcollection name="archive" filename="archive"/>
+</collection>

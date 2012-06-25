@@ -1,0 +1,5 @@
+<collection xmlns="http://exist.sourceforge.net/NS/exist" name="/db/apps/logger/xquery" version="1" owner="admin" group="dba" mode="755" created="2011-11-20T23:03:15.258Z">
+    <resource type="BinaryResource" name="browse.xq" skip="no" owner="admin" group="dba" mode="755" created="2011-11-21T17:45:02.2Z" modified="2011-11-21T20:46:23.9Z" filename="browse.xq" mimetype="application/xquery"/>
+    <resource type="BinaryResource" name="times.xq" skip="no" owner="admin" group="dba" mode="755" created="2011-11-20T23:03:31.065Z" modified="2011-11-20T23:25:05.655Z" filename="times.xq" mimetype="application/xquery"/>
+    <resource type="BinaryResource" name="archive.xq" skip="no" owner="admin" group="dba" mode="755" created="2011-11-21T14:49:03.034Z" modified="2011-11-21T14:49:03.034Z" filename="archive.xq" mimetype="application/xquery"/>
+</collection>

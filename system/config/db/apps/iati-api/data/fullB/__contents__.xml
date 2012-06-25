@@ -1,0 +1,5 @@
+<collection xmlns="http://exist.sourceforge.net/NS/exist" name="/db/system/config/db/apps/iati-api/data/fullB" version="1" owner="admin" group="dba" mode="755" created="2011-11-18T10:39:09.446Z">
+    <resource type="XMLResource" name="collection.xconf" skip="no" owner="admin" group="dba" mode="755" created="2011-11-18T10:39:09.448Z" modified="2011-11-18T10:39:09.448Z" filename="collection.xconf" mimetype="text/xml"/>
+    <subcollection name="codes" filename="codes"/>
+    <subcollection name="activities" filename="activities"/>
+</collection>

@@ -1,0 +1,2 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<corpusindex><corpus name="test2">A small corpus for testing purposes </corpus><corpus hidden="hidden" name="vstore">The store for the standalone validator</corpus><corpus hidden="hidden" name="fullA"/><corpus name="fullB">Corpus for the demo at 23/11/11</corpus><corpus name="fullC">The corpus for 25/11/11 - only in test at present</corpus></corpusindex>

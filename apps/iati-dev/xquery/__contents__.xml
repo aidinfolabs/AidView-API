@@ -1,0 +1,10 @@
+<collection xmlns="http://exist.sourceforge.net/NS/exist" name="/db/apps/iati-dev/xquery" version="1" owner="admin" group="dba" mode="755" created="2012-02-22T16:41:47.328Z">
+    <resource type="BinaryResource" name="rss.xq" skip="no" owner="admin" group="dba" mode="755" created="2012-02-26T09:46:44.6Z" modified="2012-02-26T09:46:44.6Z" filename="rss.xq" mimetype="application/xquery"/>
+    <resource type="BinaryResource" name="olap.xq" skip="no" owner="admin" group="dba" mode="755" created="2012-02-22T18:52:23.377Z" modified="2012-02-22T22:42:44.855Z" filename="olap.xq" mimetype="application/xquery"/>
+    <resource type="BinaryResource" name="woapi.xq" skip="no" owner="admin" group="dba" mode="755" created="2012-02-22T17:05:17.628Z" modified="2012-02-24T08:09:56.637Z" filename="woapi.xq" mimetype="application/xquery"/>
+    <resource type="BinaryResource" name="doc.xq" skip="no" owner="admin" group="dba" mode="755" created="2012-02-22T22:50:40.708Z" modified="2012-02-22T22:54:18.583Z" filename="doc.xq" mimetype="application/xquery"/>
+    <resource type="BinaryResource" name="admin.xq" skip="no" owner="admin" group="dba" mode="755" created="2012-02-22T17:05:17.62Z" modified="2012-02-22T18:28:48.461Z" filename="admin.xq" mimetype="application/xquery"/>
+    <resource type="BinaryResource" name="home.xq" skip="no" owner="admin" group="dba" mode="755" created="2012-02-22T17:05:17.623Z" modified="2012-02-22T18:32:53.114Z" filename="home.xq" mimetype="application/xquery"/>
+    <resource type="BinaryResource" name="validate.xq" skip="no" owner="admin" group="dba" mode="755" created="2012-02-22T17:05:17.626Z" modified="2012-02-22T17:28:28.011Z" filename="validate.xq" mimetype="application/xquery"/>
+    <resource type="BinaryResource" name="stats.xq" skip="no" owner="admin" group="dba" mode="755" created="2012-02-22T19:09:33.392Z" modified="2012-02-22T19:09:45.407Z" filename="stats.xq" mimetype="application/xquery"/>
+</collection>

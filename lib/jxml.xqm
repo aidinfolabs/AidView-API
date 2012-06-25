@@ -6,17 +6,12 @@
   recursive algorithm for text parsing causes stack overflow after 99 iterations.
   embedded HTML is not supported
   root is div 
-  un named arrays or blocks are enclosed in divs
-  element names are expected to be valid XML names
-  
-  this works with the current (May 2012) CKAN package data
-  
-  it should be replaced when a module in eXist supporting this transformation becomes available
+  un names arrays or bokc are enclosed in divs
+  element names are expected to be valid XML names 
   
 :)
 
 module namespace jxml = "http://kitwallace.me/jxml";
-import module namespace hc= "http://expath.org/ns/http-client";
 
 declare variable $jxml:amp :=  codepoints-to-string(38);  
 
@@ -162,27 +157,10 @@ declare function jxml:convert ($json, $flags) {
       jxml:group($parse)
 };
 
-(: should have some error-reporting here :)
-
 declare function jxml:convert-url ($url, $flags) {
-let $request :=
-   element hc:request {attribute method {"GET"}, attribute href {$url}, attribute timeout {"3"} }
-let $result := hc:send-request($request)
-let $meta := $result[1]
-let $data := $result[2]
-return 
-  if (empty($meta) or empty($data))
-  then ()
-  else 
-   if ($meta/hc:body/@media-type = "application/json")
-   then let $json := util:binary-to-string($data)   
-        return 
-            if (exists($json))
-            then jxml:convert($json, $flags)
-            else ()
-   else ()
+let $json := util:binary-to-string(httpclient:get(xs:anyURI($url),false(),())//httpclient:body)
+return jxml:convert($json, $flags)
 };
-
 declare function jxml:convert-url ($url) {
  jxml:convert-url($url,())
 };

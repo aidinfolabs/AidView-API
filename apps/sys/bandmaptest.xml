@@ -1,0 +1,82 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<TestSet><testName>BandMap</testName><description><p>A BandMap is a structure to map a numerical value to one of a set of non-overlapping
+            bands of values and hence to attributes of that band (? is there an established name for
+            this structure which is an ordinal to nominal map?)</p><p>A bandMap can be used to model such structures as salary scales, the windspeeds on the
+            Beaufort Scale, honours classification and bulk discounts.</p><p>There are a number of ways a bandMap can be implemented - by both min and max for each
+            band with no band sequencing, or by just the max or min of the band with bands in
+            sequence. The later removes the redundancy of matching max and min on adjacent bands.
+            Here I've chosen to represent a band by its minimum value which defines an interval
+            closed at the lower end, open at the upper end. The highest band includes infinity.
+            Values below the lowest limit are mapped to null.</p><p>A band is required to have an attribute 'min' castable to xs:decimal, and may have any
+            other attributes or child elements. Bands must be in ascending order of min. Although an
+            XML Schema could go some way to defining a valid bandMap, a better language would be
+            Schematron, but that is not yet integrated into eXist. In this example, the validation
+            is performed by an XQuery function.</p></description><author>Chris Wallace</author><module uri="http://www.cems.uwe.ac.uk/xmlwiki/band" prefix="band" location="/db/lib/bandmap.xqm"/><prolog>
+        
+(: define a Band map from  waiting times to colours :)     
+declare variable $band:wait :=
+       &lt;bandMap&gt;
+          &lt;band  min="0" colour="red"/&gt;
+          &lt;band min="6" colour="orange"/&gt;
+          &lt;band min="10" colour="green"/&gt;
+         &lt;/bandMap&gt;;
+</prolog><test output="text"><task>Compute band colour from 0 to 12</task><code>for $i in (0 to 12) return string(band:band-for($band:wait,$i)/@colour)</code><expected>red red red red red red orange orange orange orange green green green</expected></test><test output="text"><task>Check return 12</task><code>string(band:band-for($band:wait,12)/@colour)</code><expected>green</expected></test><test output="text"><task>Check return below min is null</task><code>string(band:band-for($band:wait,-1)/@colour)</code><expected/></test><test output="text"><task>Check that $band:wait is a valid bandSet</task><code>band:is-bandMap($band:wait)</code><expected>true</expected></test><test output="text"><task>Check assertion fails if min not in order</task><code>
+            
+let $bad :=
+&lt;bandMap&gt;
+  &lt;band min="0" colour="black"/&gt;
+  &lt;band min="15" colour="red"/&gt;
+  &lt;band min="10" colour="orange"/&gt;
+  &lt;band min="999999" colour="green"/&gt;
+&lt;/bandMap&gt;
+return band:is-bandMap($bad)            
+            </code><expected>false</expected></test><test output="text"><task>Check assertion fails if not enough bands</task><code>
+let $bad := 
+&lt;bandMap&gt;
+   &lt;band min="0" colour="black"/&gt;
+&lt;/bandMap&gt;
+return band:is-bandMap($bad)  </code><expected>false</expected></test><test output="text"><task>Check assertion fails if each band does not have min attribute</task><code>
+let $bad := 
+&lt;bandMap&gt;
+   &lt;band min="0" colour="black"/&gt;
+   &lt;band max="15" min='10' colour="red"/&gt;
+   &lt;band min="10"  colour="orange"/&gt;
+   &lt;band max="999999" colour="green"/&gt;
+&lt;/bandMap&gt;
+return band:is-bandMap($bad)   </code><expected>false</expected></test><test output="text"><task>Check assertion fails if a band min is not castable to xs:decimal</task><code>
+ let $bad := 
+ &lt;bandMap&gt;
+    &lt;band min="0" colour="black"/&gt;
+    &lt;band min="15" colour="red"/&gt;
+    &lt;band min="ten" colour="orange"/&gt;
+    &lt;band min="999999" colour="green"/&gt;
+&lt;/bandMap&gt;
+return band:is-bandMap($bad)  </code><expected>false</expected></test><test output="text"><task>Use bandMap for the Beaufort scale - just force 0 to 4 to return the wind force if the
+            wind speed is 7 knots</task><code>
+let $beaufort := 
+    &lt;bandMap&gt; 
+         &lt;band min="0" force="0"&gt;Calm&lt;/band&gt; 
+         &lt;band min="1" force="1"&gt;Light airs&lt;/band&gt; 
+         &lt;band min="4" force="2"&gt;Light  Breeze&lt;/band&gt; 
+         &lt;band min="7" force="3"&gt;Gentle Breeze&lt;/band&gt;
+         &lt;band min="11" force="4"&gt;Moderate Breeze&lt;/band&gt;
+    &lt;/bandMap&gt; 
+ return  band:band-for($beaufort,7)/text()   </code><expected>Gentle Breeze</expected></test><test><task>Check safe access with valid pre and post conditions</task><code>band:safe-band-for($band:wait,5)</code><expected><band min="0" colour="red"/></expected></test><test><task>Check safe access with valid pre and post conditions</task><code>band:safe-band-for($band:wait,7)</code><expected><band min="6" colour="orange"/></expected></test><test><task>Check safe access with valid pre and post conditions</task><code>band:safe-band-for($band:wait,10)</code><expected><band min="10" colour="green"/></expected></test><test><task>Check safe access with invalid pre-condition</task><code>
+ let $bad := 
+     &lt;bandMap&gt; 
+        &lt;band min="0" colour="black"/&gt;
+        &lt;band min="15" colour="red"/&gt; 
+        &lt;band min="ten"  colour="orange"/&gt;
+        &lt;band min="999999" colour="green"/&gt;
+     &lt;/bandMap&gt; 
+ return band:safe-band-for($bad,5)           
+            </code><expected><error>Pre-condition failed</error></expected></test><test><task>Root element name is not constrained, only the child element name</task><code>
+ let $good := 
+     &lt;TrafficLights&gt; 
+           &lt;band  min="0" colour="red"/&gt;
+           &lt;band min="6" colour="orange"/&gt;
+          &lt;band min="10" colour="green"/&gt;
+     &lt;/TrafficLights&gt; 
+ return band:safe-band-for($good,5) 
+
+   </code><expected><band min="0" colour="red"/></expected></test></TestSet>

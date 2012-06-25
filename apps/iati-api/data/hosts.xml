@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<hosts><host name="maps.aidsalliance.org"><comment/></host><host name="projects.dfid.gov.uk"><comment/></host><host name="www.aidinfo.org"><comment/></host><host name="ec.europa.eu"><comment/></host><host name="www.openaidregister.org"><comment>
+        missing partipating-org [@role=”Funding”]  CA-CRA-89980-1815-RR0001-WPM-2011-WT</comment></host><host name="www.hewlett.org"><comment>transaction-type is called activity-type so transaction analysis not available</comment></host><host name="www.maec.es"><comment>
+        currency code eur is lower case or mixed case  - sb EUR  - pipeline converts to uppercase 
+        participating-org/@ref are not  OrganisationIdentifiers, nor is “Spain”
+        
+        participating-org/@roles do not conform to the coding list esp “funding” not “Funding” - 
+           (this is where the choice in the schema to have some numeric codes, some alpha really bites)
+        recipient-country/code - some are invalid  eg. NES ? ,ARM (Aremia) - using 3-character codes
+        some sector codes are not in sector lists
+        some region codes are not in region list
+        
+        unusable in present state
+        
+     </comment></host><host name="www.minbuza.nl"><comment>
+        download url refers to a zip file   http://www.iatiregistry.org/dataset/minbuza_nl-activities
+        unable to be loaded 
+    </comment></host><host name="api.openaid.se"><comment/></host><host name="www.unops.org"><comment>
+       
+       participant-org[@role=”Funding”]  is missing so no funder facet analysis
+       
+   </comment></host><host name="siteresources.worldbank.org"><comment>
+       some downloads are not well-formed XML - http://siteresources.worldbank.org/IATI/WB-298.xml 
+   </comment></host></hosts>

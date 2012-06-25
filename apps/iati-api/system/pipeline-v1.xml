@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<pipeline>
+<!-- this step is failing on aa-activities - reason unknown - but this defaulting could be done at runtime using an expression like:
+    
+       $currency = ($value/@currency,$value/../../@currency,"USD")[1]
+       
+    <xquery>iati-t:add-default-currency($activity)</xquery>
+--><xquery>iati-t:add-default-sector-vocab($activity)</xquery><xquery>iati-t:add-DEC-3-sectors($activity)</xquery><xquery>iati-t:add-project-value($activity)</xquery><xquery>iati-t:apportion-sector-value($activity)</xquery><xquery>iati-t:apportion-country-value($activity)</xquery><xquery>iati-t:apportion-region-value($activity)</xquery><xquery>iati-t:add-wo-locations($activity)</xquery></pipeline>

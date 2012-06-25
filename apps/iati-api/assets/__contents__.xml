@@ -1,0 +1,5 @@
+<collection xmlns="http://exist.sourceforge.net/NS/exist" name="/db/apps/iati-api/assets" version="1" owner="admin" group="dba" mode="755" created="2011-11-17T20:38:20.542Z">
+    <resource type="BinaryResource" name="Icon_External_Link.png" skip="no" owner="admin" group="dba" mode="755" created="2011-11-17T20:38:21.217Z" modified="2011-11-17T20:38:21.217Z" filename="Icon_External_Link.png" mimetype="image/png"/>
+    <resource type="BinaryResource" name="screen-2.css" skip="no" owner="admin" group="dba" mode="755" created="2011-11-17T20:38:21.631Z" modified="2011-11-17T20:38:21.631Z" filename="screen-2.css" mimetype="text/css"/>
+    <resource type="BinaryResource" name="screen.css" skip="no" owner="admin" group="dba" mode="755" created="2011-11-17T20:38:21.959Z" modified="2011-11-17T20:38:21.959Z" filename="screen.css" mimetype="text/css"/>
+</collection>

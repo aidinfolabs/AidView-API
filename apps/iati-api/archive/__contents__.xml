@@ -1,0 +1,5 @@
+<collection xmlns="http://exist.sourceforge.net/NS/exist" name="/db/apps/iati-api/archive" version="1" owner="admin" group="dba" mode="755" created="2011-11-21T14:22:52.265Z">
+    <resource type="XMLResource" name="pipeline-errors-v1.xml" skip="no" owner="admin" group="dba" mode="755" created="2011-11-28T15:02:07.444Z" modified="2011-11-28T15:02:07.444Z" filename="pipeline-errors-v1.xml" mimetype="text/xml"/>
+    <resource type="BinaryResource" name="iati-wo-2.xqm" skip="no" owner="admin" group="dba" mode="755" created="2011-11-21T16:37:17.301Z" modified="2011-11-21T16:37:17.301Z" filename="iati-wo-2.xqm" mimetype="application/xquery"/>
+    <resource type="XMLResource" name="fullB-activitySets.xml" skip="no" owner="admin" group="dba" mode="755" created="2011-11-21T14:23:16.228Z" modified="2011-11-21T14:23:16.228Z" filename="fullB-activitySets.xml" mimetype="text/xml"/>
+</collection>

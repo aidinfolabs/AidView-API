@@ -1,0 +1,5 @@
+<collection xmlns="http://exist.sourceforge.net/NS/exist" name="/db/apps/iati-api/schemas" version="1" owner="admin" group="dba" mode="755" created="2011-11-17T20:42:08.693Z">
+    <resource type="XMLResource" name="iati-activities-schema.xsd" skip="no" owner="admin" group="dba" mode="755" created="2011-11-17T20:42:09.74Z" modified="2011-11-17T20:42:09.74Z" filename="iati-activities-schema.xsd" mimetype="text/xml"/>
+    <resource type="XMLResource" name="iati-common.xsd" skip="no" owner="admin" group="dba" mode="755" created="2011-11-17T20:42:10.057Z" modified="2011-11-17T20:42:10.057Z" filename="iati-common.xsd" mimetype="text/xml"/>
+    <resource type="XMLResource" name="xml.xsd" skip="no" owner="admin" group="dba" mode="755" created="2011-11-17T20:42:10.333Z" modified="2011-11-17T20:42:10.333Z" filename="xml.xsd" mimetype="text/xml"/>
+</collection>

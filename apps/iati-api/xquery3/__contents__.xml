@@ -1,0 +1,6 @@
+<collection xmlns="http://exist.sourceforge.net/NS/exist" name="/db/apps/iati-api/xquery3" version="1" owner="admin" group="dba" mode="755" created="2012-02-22T16:22:20.501Z">
+    <resource type="BinaryResource" name="admin.xq" skip="no" owner="admin" group="dba" mode="755" created="2012-02-22T16:34:00.991Z" modified="2012-02-22T16:34:00.991Z" filename="admin.xq" mimetype="application/xquery"/>
+    <resource type="BinaryResource" name="home.xq" skip="no" owner="admin" group="dba" mode="755" created="2012-02-22T16:34:00.994Z" modified="2012-02-22T16:34:00.994Z" filename="home.xq" mimetype="application/xquery"/>
+    <resource type="BinaryResource" name="validate.xq" skip="no" owner="admin" group="dba" mode="755" created="2012-02-22T16:34:00.997Z" modified="2012-02-22T16:34:00.997Z" filename="validate.xq" mimetype="application/xquery"/>
+    <resource type="BinaryResource" name="woapi.xq" skip="no" owner="admin" group="dba" mode="755" created="2012-02-22T16:34:01Z" modified="2012-02-22T16:34:01Z" filename="woapi.xq" mimetype="application/xquery"/>
+</collection>

@@ -1,1 +1,0 @@
-<resources name="iati-empty" base="/db/apps/iati"><resource path="data"><description>corpus data</description></resource><resource path="olap"><description>olap data</description></resource><resource path="/db/system/config/db/apps/iati"><description>indexes</description></resource></resources>

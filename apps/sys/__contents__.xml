@@ -1,6 +1,8 @@
-<collection xmlns="http://exist.sourceforge.net/NS/exist" name="/db/apps/sys" owner="admin" group="dba" mode="755" created="2012-06-23T15:25:06+01:00" version="1">
-    <acl entries="0" version="1"/>
-    <subcollection name="xq" filename="xq"/>
-    <subcollection name="xslt" filename="xslt"/>
-    <subcollection name="assets" filename="assets"/>
+<collection xmlns="http://exist.sourceforge.net/NS/exist" name="/db/apps/sys" version="1" owner="admin" group="dba" mode="755" created="2011-11-21T09:02:13.088Z">
+    <resource type="XMLResource" name="xmlverbatim.xsl" skip="no" owner="admin" group="dba" mode="755" created="2011-11-21T09:02:17.136Z" modified="2011-11-21T09:02:17.136Z" filename="xmlverbatim.xsl" mimetype="application/xslt+xml"/>
+    <resource type="BinaryResource" name="xmlverbatim.css" skip="no" owner="admin" group="dba" mode="755" created="2011-11-21T09:02:26.036Z" modified="2011-11-21T09:02:26.036Z" filename="xmlverbatim.css" mimetype="text/css"/>
+    <resource type="BinaryResource" name="getfile.xq" skip="no" owner="admin" group="dba" mode="755" created="2011-11-21T17:25:21.733Z" modified="2011-11-21T22:45:11.302Z" filename="getfile.xq" mimetype="application/xquery"/>
+    <resource type="XMLResource" name="bandmaptest.xml" skip="no" owner="admin" group="dba" mode="755" created="2011-11-21T09:03:52.142Z" modified="2011-11-21T09:03:52.142Z" filename="bandmaptest.xml" mimetype="text/xml"/>
+    <resource type="BinaryResource" name="runTests.xq" skip="no" owner="admin" group="dba" mode="755" created="2011-11-21T09:02:35.456Z" modified="2011-11-21T15:40:00.522Z" filename="runTests.xq" mimetype="application/xquery"/>
+    <resource type="BinaryResource" name="test.css" skip="no" owner="admin" group="dba" mode="755" created="2011-11-21T15:11:28.521Z" modified="2011-11-21T15:11:28.521Z" filename="test.css" mimetype="text/css"/>
 </collection>

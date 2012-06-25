@@ -1,0 +1,8 @@
+<collection xmlns="http://exist.sourceforge.net/NS/exist" name="/db/apps/iati-api/utils" version="1" owner="admin" group="dba" mode="755" created="2011-11-17T20:42:11.992Z">
+    <resource type="BinaryResource" name="ta.xq" skip="no" owner="admin" group="dba" mode="755" created="2011-11-26T19:09:47.309Z" modified="2011-11-26T19:17:00.254Z" filename="ta.xq" mimetype="application/xquery"/>
+    <resource type="BinaryResource" name="CAM-scrape.xq" skip="no" owner="admin" group="dba" mode="755" created="2011-11-23T15:49:52.831Z" modified="2011-11-23T16:58:58.714Z" filename="CAM-scrape.xq" mimetype="application/xquery"/>
+    <resource type="BinaryResource" name="reindex.xq" skip="no" owner="admin" group="dba" mode="755" created="2012-04-27T16:50:21.928Z" modified="2012-04-27T23:14:10.09Z" filename="reindex.xq" mimetype="application/xquery"/>
+    <resource type="BinaryResource" name="load-cache.xq" skip="no" owner="admin" group="dba" mode="755" created="2011-11-24T11:41:21.55Z" modified="2011-11-24T11:43:37.256Z" filename="load-cache.xq" mimetype="application/xquery"/>
+    <resource type="BinaryResource" name="unzip.xq" skip="no" owner="admin" group="dba" mode="755" created="2011-11-24T12:15:39.557Z" modified="2011-11-24T12:15:51.829Z" filename="unzip.xq" mimetype="application/xquery"/>
+    <resource type="BinaryResource" name="rename.xq" skip="no" owner="admin" group="dba" mode="755" created="2012-02-22T15:31:13.62Z" modified="2012-02-22T16:55:31.031Z" filename="rename.xq" mimetype="application/xquery"/>
+</collection>

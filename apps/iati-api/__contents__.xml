@@ -1,0 +1,21 @@
+<collection xmlns="http://exist.sourceforge.net/NS/exist" name="/db/apps/iati-api" version="1" owner="admin" group="dba" mode="755" created="2011-11-17T20:38:20.363Z">
+    <subcollection name="lib" filename="lib"/>
+    <subcollection name="utils" filename="utils"/>
+    <subcollection name="temp" filename="temp"/>
+    <subcollection name="currency" filename="currency"/>
+    <subcollection name="xquery" filename="xquery"/>
+    <subcollection name="data" filename="data"/>
+    <subcollection name="tests" filename="tests"/>
+    <subcollection name="assets" filename="assets"/>
+    <subcollection name="xquery3" filename="xquery3"/>
+    <subcollection name="xquery2" filename="xquery2"/>
+    <subcollection name="lib2" filename="lib2"/>
+    <subcollection name="schemas" filename="schemas"/>
+    <subcollection name="geo" filename="geo"/>
+    <subcollection name="cache" filename="cache"/>
+    <subcollection name="system" filename="system"/>
+    <subcollection name="lib3" filename="lib3"/>
+    <subcollection name="olap" filename="olap"/>
+    <subcollection name="archive" filename="archive"/>
+    <subcollection name="codes" filename="codes"/>
+</collection>

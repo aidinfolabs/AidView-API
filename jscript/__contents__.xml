@@ -1,0 +1,9 @@
+<collection xmlns="http://exist.sourceforge.net/NS/exist" name="/db/jscript" version="1" owner="admin" group="dba" mode="755" created="2011-11-17T20:38:00.414Z">
+    <resource type="BinaryResource" name="raphael-min.js" skip="no" owner="admin" group="dba" mode="755" created="2011-11-17T20:38:03.19Z" modified="2011-11-17T20:38:03.19Z" filename="raphael-min.js" mimetype="application/x-javascript"/>
+    <resource type="BinaryResource" name="sorttable.js" skip="no" owner="admin" group="dba" mode="755" created="2011-11-17T20:38:03.4Z" modified="2011-11-17T20:38:03.4Z" filename="sorttable.js" mimetype="application/x-javascript"/>
+    <resource type="BinaryResource" name="StyledMarker.js" skip="no" owner="admin" group="dba" mode="755" created="2011-11-17T20:38:03.561Z" modified="2011-11-17T20:38:03.561Z" filename="StyledMarker.js" mimetype="application/x-javascript"/>
+    <resource type="BinaryResource" name="jquery-1.5.1.min.js" skip="no" owner="admin" group="dba" mode="755" created="2011-11-17T20:38:01.054Z" modified="2011-11-17T20:38:01.054Z" filename="jquery-1.5.1.min.js" mimetype="application/x-javascript"/>
+    <resource type="BinaryResource" name="jquery-ui-1.8.12.custom.min.js" skip="no" owner="admin" group="dba" mode="755" created="2011-11-17T20:38:02.221Z" modified="2011-11-17T20:38:02.221Z" filename="jquery-ui-1.8.12.custom.min.js" mimetype="application/x-javascript"/>
+    <resource type="BinaryResource" name="jquery.metadata.js" skip="no" owner="admin" group="dba" mode="755" created="2011-11-17T20:38:02.382Z" modified="2011-11-17T20:38:02.382Z" filename="jquery.metadata.js" mimetype="application/x-javascript"/>
+    <resource type="BinaryResource" name="jquery.tools.min.js" skip="no" owner="admin" group="dba" mode="755" created="2011-11-17T20:38:02.686Z" modified="2011-11-17T20:38:02.686Z" filename="jquery.tools.min.js" mimetype="application/x-javascript"/>
+</collection>

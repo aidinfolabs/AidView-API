@@ -1,7 +1,5 @@
 (:
     Module: functions for formatting an xs:dateTime value.
-    
-    modified 21 May to remove use of item-at - now removed 
 :)
 module namespace date="http://kitwallace.me/date";
 
@@ -20,79 +18,7 @@ declare variable $date:days :=
 
 declare variable $date:shortDays :=
   ( "Mon", "Tue", "Wed", "Thu", "Fri", "Sat", "Sun");
-
-declare function date:year-calendar ($year,$f) {
-   <table>
-     {for $r in 1 to 4
-      return
-      <tr>
-      {
-      for $c in 1 to 3
-      let $m := ($r - 1) * 3 + $c
-      let $month := date:zero-pad($m)
-      return
-         <td>{date:month-calendar($year,$month,$f)}</td>
-      }
-      </tr>
-     }
-   </table>
-
-};
-
-declare function date:month-calendar ($year,$month,$f) {
-let $yearmonth := concat($year,"-",$month)
-let $month-day1 := xs:date(concat($yearmonth,"-01"))
-let $month-day1-weekday := datetime:day-in-week($month-day1)
-let $days := datetime:days-in-month($month-day1)
-let $offset := $month-day1-weekday -1
-let $weeks  := xs:integer(math:ceil (($days + $offset) div 7 ))
-return
-<div>
-  <table>
-    <tr><th colspan="7">{$date:fullMonths[xs:integer($month)]}&#160;{$year}</th></tr>
-    <tr>
-      <th>Sun</th>
-      <th>Mon</th>
-      <th>Tue</th>
-      <th>Wed</th>
-      <th>Thu</th>
-      <th>Fri</th>
-      <th>Sat</th>
-    </tr>
-    <tr>
-      {for $n in 1 to $offset
-       return <td/>
-      }
-      {for $n in 1 to 7 - $offset
-       let $day := date:zero-pad($n)
-       let $date := concat($yearmonth,"-",$day)
-       let $val := util:call($f,$date)
-       return 
-          $val
-      }
-   </tr>
-   {for $week in (0 to $weeks - 1)
-    let $sun := $week * 7 + 8 - $offset 
-    return
-      <tr>
-        {
-        for $n in  ($sun to $sun + 6) 
-        return 
-           if ($n le $days) 
-           then      
-              let $day := date:zero-pad($n)
-              let $date := concat($yearmonth,"-",$day)
-              let $val := util:call($f,$date)
-              return 
-                 $val
-           else ()
-        }
-      </tr>
-   }
- </table>
- </div>
-};
-
+  
 declare function date:normalize-time($t){
  let $t := normalize-space($t)
  return
@@ -172,10 +98,6 @@ then
   return 
     if ($date castable as xs:date ) then $date else ()
  else ()
-};
-
-declare function date:datetime-to-RFC-822($date) as xs:string {
-  datetime:format-dateTime($date,"E, dd MMM yyyy H:m:s z")
 };
 
 declare function date:RFC-822-to-date($date as xs:string) as xs:date {
@@ -271,7 +193,7 @@ declare function date:last-of-month($d as xs:date) {
 declare function date:to-monddyyyy($date as xs:date) as xs:string {
 (:  e.g. Jan 20 2007  :)
     string-join((
-             $date:months[ month-from-date($date)],
+             item-at($date:months, month-from-date($date)),
              day-from-date($date),
              year-from-date($date)), " ")
 }; 
@@ -279,9 +201,9 @@ declare function date:to-monddyyyy($date as xs:date) as xs:string {
 declare function date:to-dowdayMon($date as xs:date) as xs:string {
 (: e.g Wed 20 Jan :)
 	string-join((
-	               $date:shortDays[date:dayOfWeekNo($date)],
+	               item-at($date:shortDays, date:dayOfWeekNo($date) ),
                               day-from-date($date),
-		$date:months[month-from-date($date)]
+		item-at($date:months, month-from-date($date))
 		), " ")
 };
 
@@ -289,7 +211,7 @@ declare function date:to-dayMonthYear($date as xs:date) as xs:string {
 (: e.g 20st January 2007 :)
 	string-join((	
                concat(day-from-date($date),date:daySuffix(day-from-date($date))), 
-		$date:fullMonths[month-from-date($date)],
+		item-at($date:fullMonths, month-from-date($date)),
 		year-from-date($date)), " ")
 };
 

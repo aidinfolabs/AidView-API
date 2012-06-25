@@ -1,0 +1,4 @@
+<collection xmlns="http://exist.sourceforge.net/NS/exist" name="/db/apps/iati-api/tests" version="1" owner="admin" group="dba" mode="755" created="2011-11-21T15:22:03.302Z">
+    <resource type="XMLResource" name="api-1.xml" skip="no" owner="admin" group="dba" mode="755" created="2011-11-21T20:36:40.598Z" modified="2011-11-21T20:36:40.598Z" filename="api-1.xml" mimetype="text/xml"/>
+    <resource type="XMLResource" name="api-1-6.xml" skip="no" owner="admin" group="dba" mode="755" created="2011-11-22T20:42:41.651Z" modified="2011-11-22T20:42:41.651Z" filename="api-1-6.xml" mimetype="text/xml"/>
+</collection>

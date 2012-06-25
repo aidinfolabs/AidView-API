@@ -1,0 +1,6 @@
+<collection xmlns="http://exist.sourceforge.net/NS/exist" name="/db/apps/iati-api/temp" version="1" owner="admin" group="dba" mode="755" created="2011-11-23T10:26:01.247Z">
+    <resource type="XMLResource" name="activitySets-fullB-x.xml" skip="no" owner="admin" group="dba" mode="755" created="2011-11-24T16:26:52.303Z" modified="2011-11-24T16:26:52.303Z" filename="activitySets-fullB-x.xml" mimetype="text/xml"/>
+    <resource type="XMLResource" name="activitySets-28-11.xml" skip="no" owner="admin" group="dba" mode="755" created="2011-11-28T17:30:30.793Z" modified="2011-11-28T17:30:30.793Z" filename="activitySets-28-11.xml" mimetype="text/xml"/>
+    <resource type="XMLResource" name="IATI_ACTIVITIES.xml" skip="no" owner="admin" group="dba" mode="755" created="2011-11-23T10:27:21.801Z" modified="2011-11-23T10:27:21.801Z" filename="IATI_ACTIVITIES.xml" mimetype="text/xml"/>
+    <resource type="XMLResource" name="activitySets-fullb.xml" skip="no" owner="admin" group="dba" mode="755" created="2011-11-25T10:43:11.226Z" modified="2011-11-25T10:43:11.226Z" filename="activitySets-fullb.xml" mimetype="text/xml"/>
+</collection>

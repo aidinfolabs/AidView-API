@@ -1,5 +1,6 @@
-<collection xmlns="http://exist.sourceforge.net/NS/exist" name="/db/apps" owner="admin" group="dba" mode="755" created="2012-06-23T15:24:34+01:00" version="1">
-    <acl entries="0" version="1"/>
+<collection xmlns="http://exist.sourceforge.net/NS/exist" name="/db/apps" version="1" owner="admin" group="dba" mode="755" created="2011-11-17T20:38:20.052Z">
+    <subcollection name="iati-dev" filename="iati-dev"/>
     <subcollection name="sys" filename="sys"/>
-    <subcollection name="iati" filename="iati"/>
+    <subcollection name="iati-api" filename="iati-api"/>
+    <subcollection name="logger" filename="logger"/>
 </collection>

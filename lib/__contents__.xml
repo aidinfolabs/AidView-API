@@ -1,24 +1,27 @@
-<collection xmlns="http://exist.sourceforge.net/NS/exist" name="/db/lib" owner="admin" group="dba" mode="755" created="2012-06-23T15:24:32+01:00" version="1">
-    <acl entries="0" version="1"/>
-    <resource type="BinaryResource" name="date.xqm" owner="admin" group="dba" mode="644" created="2012-06-23T15:24:32+01:00" modified="2012-06-23T15:24:32+01:00" filename="date.xqm" mimetype="application/xquery">
-        <acl entries="0" version="1"/>
-    </resource>
-    <resource type="BinaryResource" name="jxml.xqm" owner="admin" group="dba" mode="644" created="2012-06-23T15:24:32+01:00" modified="2012-06-23T15:24:32+01:00" filename="jxml.xqm" mimetype="application/xquery">
-        <acl entries="0" version="1"/>
-    </resource>
-    <resource type="BinaryResource" name="log.xqm" owner="admin" group="dba" mode="644" created="2012-06-23T15:24:32+01:00" modified="2012-06-23T15:24:33+01:00" filename="log.xqm" mimetype="application/xquery">
-        <acl entries="0" version="1"/>
-    </resource>
-    <resource type="BinaryResource" name="num.xqm" owner="admin" group="dba" mode="644" created="2012-06-23T15:24:33+01:00" modified="2012-06-23T15:24:33+01:00" filename="num.xqm" mimetype="application/xquery">
-        <acl entries="0" version="1"/>
-    </resource>
-    <resource type="BinaryResource" name="ui.xqm" owner="admin" group="dba" mode="644" created="2012-06-23T15:24:33+01:00" modified="2012-06-23T15:24:33+01:00" filename="ui.xqm" mimetype="application/xquery">
-        <acl entries="0" version="1"/>
-    </resource>
-    <resource type="BinaryResource" name="url.xqm" owner="admin" group="dba" mode="644" created="2012-06-23T15:24:33+01:00" modified="2012-06-23T15:24:33+01:00" filename="url.xqm" mimetype="application/xquery">
-        <acl entries="0" version="1"/>
-    </resource>
-    <resource type="BinaryResource" name="wfn.xqm" owner="admin" group="dba" mode="644" created="2012-06-23T15:24:33+01:00" modified="2012-06-23T15:24:33+01:00" filename="wfn.xqm" mimetype="application/xquery">
-        <acl entries="0" version="1"/>
-    </resource>
+<collection xmlns="http://exist.sourceforge.net/NS/exist" name="/db/lib" version="1" owner="admin" group="dba" mode="755" created="2011-11-17T20:37:45.165Z">
+    <resource type="BinaryResource" name="sms.xqm" skip="no" owner="admin" group="dba" mode="755" created="2011-11-17T20:37:47.512Z" modified="2011-11-17T20:37:47.512Z" filename="sms.xqm" mimetype="application/xquery"/>
+    <resource type="BinaryResource" name="bandmap.xqm" skip="no" owner="admin" group="dba" mode="755" created="2011-11-17T20:37:45.36Z" modified="2011-11-17T20:37:45.36Z" filename="bandmap.xqm" mimetype="application/xquery"/>
+    <resource type="BinaryResource" name="controller.xqm" skip="no" owner="admin" group="dba" mode="755" created="2011-11-17T20:37:45.478Z" modified="2011-11-17T20:37:45.478Z" filename="controller.xqm" mimetype="application/xquery"/>
+    <resource type="BinaryResource" name="convert.xqm" skip="no" owner="admin" group="dba" mode="755" created="2011-11-17T20:37:45.625Z" modified="2011-11-17T20:37:45.625Z" filename="convert.xqm" mimetype="application/xquery"/>
+    <resource type="BinaryResource" name="csv.xqm" skip="no" owner="admin" group="dba" mode="755" created="2011-11-17T20:37:45.802Z" modified="2011-11-17T20:37:45.802Z" filename="csv.xqm" mimetype="application/xquery"/>
+    <resource type="BinaryResource" name="date.xqm" skip="no" owner="admin" group="dba" mode="755" created="2011-11-17T20:37:46.021Z" modified="2011-11-17T20:37:46.021Z" filename="date.xqm" mimetype="application/xquery"/>
+    <resource type="BinaryResource" name="geo.xqm" skip="no" owner="admin" group="dba" mode="755" created="2011-11-17T20:37:46.268Z" modified="2011-11-17T20:37:46.268Z" filename="geo.xqm" mimetype="application/xquery"/>
+    <resource type="BinaryResource" name="gmap.xqm" skip="no" owner="admin" group="dba" mode="755" created="2011-11-17T20:37:46.418Z" modified="2011-11-17T20:37:46.418Z" filename="gmap.xqm" mimetype="application/xquery"/>
+    <resource type="BinaryResource" name="jxml.xqm" skip="no" owner="admin" group="dba" mode="755" created="2011-11-17T20:37:46.589Z" modified="2011-11-17T20:37:46.589Z" filename="jxml.xqm" mimetype="application/xquery"/>
+    <resource type="BinaryResource" name="ui.xqm" skip="no" owner="admin" group="dba" mode="755" created="2011-11-17T20:37:48.418Z" modified="2011-11-21T16:53:26.059Z" filename="ui.xqm" mimetype="application/xquery"/>
+    <resource type="BinaryResource" name="login.xqm" skip="no" owner="admin" group="dba" mode="755" created="2011-11-17T20:37:46.91Z" modified="2011-11-17T20:37:46.91Z" filename="login.xqm" mimetype="application/xquery"/>
+    <resource type="BinaryResource" name="mapp.xqm" skip="no" owner="admin" group="dba" mode="755" created="2011-11-17T20:37:47.107Z" modified="2011-11-17T20:37:47.107Z" filename="mapp.xqm" mimetype="application/xquery"/>
+    <resource type="XMLResource" name="NationalGrid.xml" skip="no" owner="admin" group="dba" mode="755" created="2011-11-17T20:37:47.21Z" modified="2011-11-17T20:37:47.21Z" filename="NationalGrid.xml" mimetype="text/xml"/>
+    <resource type="BinaryResource" name="log.xqm" skip="no" owner="admin" group="dba" mode="755" created="2011-11-17T20:37:46.743Z" modified="2011-11-21T19:48:37.289Z" filename="log.xqm" mimetype="application/xquery"/>
+    <resource type="BinaryResource" name="sparql.xqm" skip="no" owner="admin" group="dba" mode="755" created="2011-11-17T20:37:47.647Z" modified="2011-11-17T20:37:47.647Z" filename="sparql.xqm" mimetype="application/xquery"/>
+    <resource type="BinaryResource" name="log-2.xqm" skip="no" owner="admin" group="dba" mode="755" created="2011-11-21T14:36:26.574Z" modified="2011-11-21T19:32:54.802Z" filename="log-2.xqm" mimetype="application/xquery"/>
+    <resource type="BinaryResource" name="suser.xqm" skip="no" owner="admin" group="dba" mode="755" created="2011-11-17T20:37:47.95Z" modified="2011-11-17T20:37:47.95Z" filename="suser.xqm" mimetype="application/xquery"/>
+    <resource type="BinaryResource" name="tables.xqm" skip="no" owner="admin" group="dba" mode="755" created="2011-11-17T20:37:48.128Z" modified="2011-11-17T20:37:48.128Z" filename="tables.xqm" mimetype="application/xquery"/>
+    <resource type="BinaryResource" name="tx.xqm" skip="no" owner="admin" group="dba" mode="755" created="2011-11-17T20:37:48.274Z" modified="2011-11-17T20:37:48.274Z" filename="tx.xqm" mimetype="application/xquery"/>
+    <resource type="BinaryResource" name="wc.xqm" skip="no" owner="admin" group="dba" mode="755" created="2011-11-17T20:37:48.56Z" modified="2011-11-17T20:37:48.56Z" filename="wc.xqm" mimetype="application/xquery"/>
+    <resource type="BinaryResource" name="wfn.xqm" skip="no" owner="admin" group="dba" mode="755" created="2011-11-17T20:37:48.719Z" modified="2011-11-17T20:37:48.719Z" filename="wfn.xqm" mimetype="application/xquery"/>
+    <resource type="BinaryResource" name="xslf.xq" skip="no" owner="admin" group="dba" mode="755" created="2011-11-17T20:37:48.837Z" modified="2011-11-17T20:37:48.837Z" filename="xslf.xq" mimetype="application/xquery"/>
+    <resource type="BinaryResource" name="string.xqm" skip="no" owner="admin" group="dba" mode="755" created="2011-11-17T20:37:47.809Z" modified="2011-11-17T20:37:47.809Z" filename="string.xqm" mimetype="application/xquery"/>
+    <resource type="BinaryResource" name="log-0.xqm" skip="no" owner="admin" group="dba" mode="755" created="2011-11-21T19:48:27.348Z" modified="2011-11-21T19:48:27.348Z" filename="log-0.xqm" mimetype="application/xquery"/>
+    <resource type="BinaryResource" name="zipapp.xqm" skip="no" owner="admin" group="dba" mode="755" created="2011-11-17T20:56:48.747Z" modified="2011-11-20T11:23:56.568Z" filename="zipapp.xqm" mimetype="application/xquery"/>
 </collection>

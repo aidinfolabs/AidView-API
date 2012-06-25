@@ -1,0 +1,4 @@
+<collection xmlns="http://exist.sourceforge.net/NS/exist" name="/db/system/config/db/apps/iati-api/data/test2" version="1" owner="admin" group="dba" mode="755" created="2011-11-17T21:03:15.251Z">
+    <subcollection name="codes" filename="codes"/>
+    <subcollection name="activities" filename="activities"/>
+</collection>

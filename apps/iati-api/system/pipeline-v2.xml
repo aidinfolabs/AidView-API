@@ -1,0 +1,2 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<pipeline><xquery>iati-t:add-default-sector-vocab($activity)</xquery><xquery>iati-t:add-DEC-3-sectors($activity)</xquery><xquery>iati-t:convert-to-USD($activity)</xquery><xquery>iati-t:add-project-value($activity)</xquery><xquery>iati-t:apportion-sector-value($activity)</xquery><xquery>iati-t:apportion-country-value($activity)</xquery><xquery>iati-t:apportion-region-value($activity)</xquery><xquery>iati-t:add-org-key($activity)</xquery><xquery>iati-t:add-wo-locations($activity)</xquery></pipeline>

@@ -1,0 +1,504 @@
+(:  
+  This module provides functions to support the api, initially for whiteoctober
+  
+  
+:)
+  
+module namespace iati-wo = "http://kitwallace.me/iati-wo";
+declare namespace iati-ad = "http://tools.aidinfolabs.org/api/AugmentedData";
+
+import module namespace iati-b = "http://kitwallace.me/iati-b" at "iati-b.xqm";
+import module namespace iati-c = "http://kitwallace.me/iati-c" at "iati-c.xqm";
+
+import module namespace log = "http://kitwallace.me/log" at "/db/lib/log.xqm";
+import module namespace json="http://kitwallace.me/json" at "../lib/json.xqm";
+
+declare variable $iati-wo:parameters :=  doc(concat($iati-b:base,"system/woquery-2.xml"))//param;
+declare variable $iati-wo:version := "2011-10-18T17:00:00";
+
+(:
+uses 
+  iati-c:code-value($code, $value)
+  iati-c:codelist($code)
+  iati-c:codelist($code,$corpus)
+
+
+  changed path expression to for loop in sum - almost twice the speed
+  
+  group functions could be refactored to perhaps 2 using eval 
+  
+:)
+
+
+declare function iati-wo:query-activities ($query as element(query), $activities as element(iati-activity)* ) as element(activity)* {
+  let $filters := 
+     for $term in $query/term
+     order by xs:integer($term/@priority)
+     return 
+        if (exists($term/and))
+        then 
+            for $value in $term/and/value
+            return 
+                 concat ("[",$term/path,"='",$value,"']")
+         else if (exists($term/or))
+         then 
+             concat ("[",$term/path,"=(", 
+                string-join(
+                   for $value in $term/or/value
+                   return concat("'",$value,"'"),
+                   ",")
+              ,")]")
+         else
+          if (exists($term/@datatype))
+          then 
+             concat("[",$term/@datatype,"(",$term/path,") ",$term/@comp," ",$term/@datatype,"('",$term/value,"')]")
+          else (: default is xs:string :)
+             concat ("[",$term/path,"='",$term/value,"']")
+  let $exp := concat("$activities",string-join($filters,""))
+  let $activities := util:eval($exp)
+  return $activities
+};
+
+declare function iati-wo:group-by-country($query  as element(query),$activities as element(iati-activity)*)  {
+let $facet := "Country"
+let $group-codes := distinct-values($activities/recipient-country/@iati-ad:country)
+return
+for $group-code in $group-codes
+let $code := iati-c:code-value($facet,$group-code,$query/corpus)
+return 
+   element {$facet} {
+       element code {$group-code},
+       element name {$code/name/string()},
+       if ($query/result eq "ids") then ()
+       else 
+         let $items :=  $activities/recipient-country[@iati-ad:country eq $group-code]
+         return
+           (element value { sum (for $item in $items return xs:double($item/@iati-ad:project-value))},
+            element count {count($items)}
+           )
+       }
+};
+
+declare function iati-wo:group-by-region($query  as element(query),$activities as element(iati-activity)*)  {
+let $facet := "Region"
+let $group-codes := distinct-values($activities/recipient-region/@iati-ad:region)
+return
+
+for $group-code in $group-codes
+let $code := iati-c:code-value($facet,$group-code,$query/corpus)
+return 
+   element {$facet} {
+       element code {$group-code},
+       element name {$code/name/string()},
+       if ($query/result = "ids") then ()
+       else 
+         let $items :=  $activities/recipient-region[@iati-ad:region eq $group-code]
+         return
+           (element value { sum (for $item in $items return xs:double($item/@iati-ad:project-value))},
+            element count {count($items)}
+           )
+       }
+};
+
+declare function iati-wo:group-by-funder($query  as element(query),$activities as element(iati-activity)*)  {
+let $facet := "Funder"
+let $group-codes := distinct-values($activities/participating-org/@iati-ad:funder)
+return
+
+for $group-code in $group-codes
+let $code := iati-c:code-value("Funder",$group-code,$query/corpus)
+return 
+   element {$facet} {
+       element code {$group-code},
+       element name {$code/name/string()},
+       if ($query/result eq "ids") then ()
+       else
+         let $items := $activities[participating-org/@iati-ad:funder eq $group-code]
+         return
+           (element value { sum (for $item in $items return xs:double($item/@iati-ad:project-value))},
+            element count {count($items)}
+           )
+       }
+};
+
+declare function iati-wo:group-by-sector($query  as element(query),$activities as element(iati-activity)*)  {
+let $facet :="Sector"
+let $group-codes := distinct-values($activities/sector/@iati-ad:sector)
+return
+
+for $group-code in $group-codes
+let $code := iati-c:code-value($facet,$group-code,$query/corpus)
+return 
+   element {$facet} {
+       element code {$group-code},
+       element name {$code/name/string()},
+       if ($query/result eq "ids") then ()
+       else
+         let $items :=  $activities/sector[@iati-ad:sector eq $group-code]
+         return
+           (element value {sum ($items/xs:double(@iati-ad:project-value))},
+            element count {count($items)}
+           )
+         }
+};
+
+declare function iati-wo:group-by-category($query  as element(query),$activities as element(iati-activity)*)  {
+let $facet := "SectorCategory"
+let $group-codes := distinct-values($activities/sector/@iati-ad:category)
+return
+
+for $group-code in $group-codes
+let $code := iati-c:code-value($facet,$group-code,$query/corpus)
+return 
+   element {$facet} {
+       element code {$group-code},
+       element name {$code/name/string()},
+       if ($query/result eq "ids") then ()
+       else
+         let $items :=  $activities/sector[@iati-ad:category eq $group-code]
+         return
+           (element value {sum ($items/xs:double(@iati-ad:project-value))},
+            element count {count($items)}
+           )
+         }
+};
+declare function iati-wo:get-url-query() as element(query){
+element query {
+ for $search in $iati-wo:parameters
+ let $rvalues := string-join(request:get-parameter($search/@name,()),",")
+ return 
+   if (exists($rvalues) and $rvalues ne "")
+   then 
+    element term {
+      attribute name {$search/@name},
+      attribute priority {($search/@priority,"10")[1]},
+      $search/@datatype,
+      $search/@comp,
+      element path {$search/@path/string()},
+     if (contains($rvalues,";"))
+     then 
+        element and {
+          for $val in tokenize($rvalues,";")
+          return 
+            element value{normalize-space($val)}
+        }
+     else if (contains($rvalues,","))
+     then
+        element or {
+          for $val in tokenize($rvalues,",")
+          return 
+            element value{normalize-space($val)}
+       }
+     else  
+       element value {normalize-space($rvalues)}
+    }
+  else (),
+  let $groupby := request:get-parameter("groupby","") return if ($groupby ne "") then element groupby {$groupby} else () ,
+  let $orderby := request:get-parameter("orderby","") return if ($orderby ne "") then element orderby {$orderby} else () ,
+  element start {request:get-parameter("start","1")},
+  element pagesize {request:get-parameter("pagesize","")},
+  element result {request:get-parameter("result","help")} ,
+  element format {request:get-parameter("format","xml")},
+  element callback {request:get-parameter("callback","")},
+  element corpus {request:get-parameter("corpus","testing")},
+  element test {request:get-parameter("test","yes")}
+ }
+};
+
+declare function iati-wo:api-help($query) {
+<html>
+   <head>
+     <title>IATI-API Query</title>
+     <link rel="stylesheet" type="text/css" href="../assets/screen-2.css"/>
+     <meta name="robots" content="noindex, nofollow"/>
+
+  </head>
+    <body>
+       <h1><a href="admin.xq">IATI-API</a> Activity API</h1>
+         <form action="?">
+          <table border="1">
+              { for $field at $i in $iati-wo:parameters
+                return
+                    element tr {
+                      element th {$field/@name/string()},
+                      if ($i = 1) then element td {
+                          attribute rowspan {count($iati-wo:parameters)},
+                          "Activities are selected on the basis of these conditions.  Conditions for different facets are ANDed. HTML forms create multiple parameters but multiple values may also be comma separated"
+                          }
+                      else (),
+                      element td {
+                        if (exists($field/@code))
+                        then 
+                           let $codelist := iati-c:codelist($field/@name,$query/corpus)
+
+                           return
+                        element select {
+                            attribute name {$field/@name},
+                            attribute multiple {"multiple"},
+                            attribute size {"5"},
+                               element option { attribute value {""} ,concat(" ..any ",$field/@code) },             
+                                 for $code in $codelist/*
+                                 order by $code/name
+                                 return
+                                    element option {
+                                       attribute value {$code/code},
+                                       concat($code/code," : ", if ($code/name ne "") then $code/name else " not listed ")
+                                    }
+           
+                               }
+                       else 
+                         <input type="string" name="{$field/@name}" size="100"/>
+                        }
+                     }
+           }
+
+       <tr><th>groupby</th>
+           <td>The facet of the data over which activities are to be summarised</td>
+           <td><select name="groupby" size="6" >
+                 <option value="">no grouping</option>
+                { for $field at $i in $iati-wo:parameters[@group="yes"]
+                  let $name := $field/@name/string()
+                  return
+                    element option {
+                        if ($name = $query/groupby )
+                        then attribute selected {"selected"}
+                        else (),
+                        $name
+                    }
+                 }
+                </select>
+           </td>
+        </tr>
+        <tr><th>orderby</th><td>order in which results are returned</td>
+           <td>
+             <select name="orderby" size="4">
+               <option value=""> unordered</option>
+               <option value="value">value - deceasing activity  value</option>
+               <option value="count">count - decreasing number of activities</option>
+               <option value="code">code - alphabetic order of code or iati-identifier</option>
+               <option value="name">name - alphabetic order of name or title</option>
+              </select>
+           </td>
+        </tr>
+        <tr><th>start</th>
+            <td>index of first item to be returned : default 1</td>
+            <td><input type="string" name="start" size="5" value="{($query/start,"1")[1]}"/></td>
+        </tr>
+        <tr><th>pagesize</th>
+            <td>number of items to be returned : default all items</td>
+            <td><input type="string" name="pagesize" size="5" value="{$query/pagesize}"/></td>
+        </tr>
+
+        <tr><th>result</th>
+            <td>default help</td>
+            <td>
+              <select name="result" size="6">
+                <option value="values">values  : code,name and value of group or activity</option>           
+                <option value="count"> count : number of activities selected</option>
+                <option value="ids">ids : list of ids of groups or activities </option>           
+                <option value="summary">summary : for activities: id,title,reporting-org,recipient-county of activities selected</option>
+                <option value="full">full : full, augmented XML of activities selected</option>
+                <option value="help">help : API documentation</option>
+              </select>
+           </td>
+         </tr>
+        <tr><th>format</th><td>default xml</td>
+            <td>
+              <select name="format" size="2">
+                <option>xml</option>
+                <option>json</option>
+              </select>
+            </td>
+        </tr>
+        <tr><th>callback</th>
+            <td>callback for JSONP : optional</td>
+            <td>  
+                <input type="string" name="callback" size="20" value="{$query/callback}"/>
+            </td>
+        </tr>
+       <tr><th>corpus</th>
+            <td>set of activities to search over ; </td>
+            <td>  
+                <select name="corpus" size="2">
+                {for $corpus in doc(concat($iati-b:base,"system/corpusindex.xml"))//corpus/text()
+                 return 
+                    element option {
+                       if ($corpus = $query/corpus)
+                       then attribute selected {"selected"}
+                       else (),
+                       $corpus
+                    }
+               }
+              </select>
+            </td>
+        </tr>
+        <tr><th>test</th><td>if yes, the query is returned along with the elapsed milliseconds</td>
+            <td><select name="test">
+                   <option>yes</option>
+                   <option>no</option>
+                </select>
+            </td>
+        </tr>
+      </table>
+       <input type="submit" />
+
+
+      </form>
+      <h2>Examples</h2>
+      <ul>
+         <li> <a href="?groupby=Country&amp;result=values&amp;test=yes">All activities grouped by Country</a></li>
+         <li> <a href="?Country=KE&amp;groupby=Sector&amp;result=values&amp;test=yes">Activities in Kenya grouped by Sector</a></li>
+         <li> <a href="?groupby=Funder&amp;result=values&amp;test=yes">All activities grouped by Funder</a></li>
+         <li> <a href="?ID=41AAA-00078808&amp;result=full&amp;test=yes">The full document for a specific activity</a></li>
+
+      </ul>
+      <h2>To do</h2>
+      <ul>
+         <li><s>query is echoed in result for testing and timing should be optional</s></li>
+         <li><s>counts in addition to values + add to spec </s> </li>
+         <li><s>list actual Funders in the corpus in the form interface - all code lists localized  </s></li>
+         <li><s>ID filter is missing  </s></li>
+         <li><s>index tuning</s> - may need to add more in the activity transformation</li>
+         <li>full corpus required for stress testing</li>
+         <li>new result type to include locations TBD </li>
+         <li>transaction summary result type TBD </li>
+         <li>date filter TBD </li>
+      </ul>
+  </body>
+ </html>
+};
+
+
+declare function iati-wo:api() {
+
+let $run-start := util:system-time()
+
+let $query := iati-wo:get-url-query()
+let $all-activities := collection(concat($iati-b:data,$query/corpus,"/activities"))/iati-activity
+return
+if ($query/result= ("count","ids","values","summary","full"))
+then 
+let $activities := $all-activities
+let $selected-activities := iati-wo:query-activities($query,$activities)
+let $activity-count := count($selected-activities)
+let $selected-groups := 
+    if (exists($query/groupby))
+      then if ($query/groupby eq "Country")
+      then iati-wo:group-by-country($query,$selected-activities)
+      else if ($query/groupby eq "Region")
+      then iati-wo:group-by-region($query,$selected-activities)
+      else if ($query/groupby eq "SectorCategory")
+      then iati-wo:group-by-category($query,$selected-activities)
+      else if ($query/groupby eq "Sector")
+      then iati-wo:group-by-sector($query,$selected-activities)
+      else if ($query/groupby eq "Funder")
+      then iati-wo:group-by-funder($query,$selected-activities)
+      else ()
+   else ()
+   
+let $group-count := count($selected-groups)
+
+let $selected-groups :=
+      if (exists($selected-groups))
+      then if (empty($query/orderby))
+      then $selected-groups
+      else if ($query/orderby eq "name")
+      then for $group in $selected-groups order by $group/name  return $group
+      else if ($query/orderby eq "code")
+      then for $group in $selected-groups order by $group/code return $group
+      else if ($query/orderby eq "value")
+      then for $group in $selected-groups order by xs:double($group/value) descending return $group
+      else if ($query/orderby eq "count")
+      then for $group in $selected-groups order by xs:double($group/count) descending return $group
+      else $selected-groups
+      else ()
+      
+let $selected-activities :=
+      if (empty($query/groupby))   (: then sort the  activities :)
+      then if (empty($query/orderby))
+      then $selected-activities
+      else if ($query/orderby eq "name")
+      then for $activity in $selected-activities order by $activity/title[1]  return $activity
+      else if ($query/orderby eq "code")
+      then for $activity in $selected-activities order by $activity/iati-identifier return $activity
+      else if ($query/orderby eq "value")
+      then for $activity in $selected-activities order by xs:double($activity/@iati-ad:project-value) descending return $activity
+      else $selected-activities
+      else ()
+      
+(: for pagination an item may be an activity or a group :)
+let $selected-items :=  if (exists($query/groupby)) then $selected-groups else $selected-activities
+let $selected-items := 
+      if ($query/start castable as xs:integer)
+      then subsequence($selected-items,xs:integer($query/start))
+      else  $selected-items
+let $selected-items := 
+      if ($query/pagesize castable as xs:integer)
+      then subsequence($selected-items,1,xs:integer($query/pagesize))
+      else  $selected-items
+let $run-end := util:system-time()
+let $run-milliseconds := (($run-end - $run-start) div xs:dayTimeDuration('PT1S'))  * 1000 
+let $logit := log:log-request("iati","api",concat("milliseconds=",$run-milliseconds))
+
+let $result :=
+element result {
+   attribute version {$iati-wo:version},
+   attribute activity-count {$activity-count},
+   if (exists($query/groupby)) 
+   then attribute group-count {count($selected-groups)} 
+   else (),
+   if ($query/test eq "yes")
+   then 
+      element test {
+         attribute elapsed-milliseconds {$run-milliseconds},     
+         $query
+      }
+   else (),
+   if ($query/result eq "count")
+   then ()
+   else if ($query/result=("values","ids"))
+   then if (empty($query/groupby))
+        then 
+             for $activity in $selected-items 
+             return 
+                element iati-activity {
+                     element code {$activity/iati-identifier/string()},
+                     element name {$activity/title[1]/string()},
+                     element value {$activity/@iati-ad:project-value/string()}
+              }
+         else $selected-items 
+  
+  else if ($query/result eq "summary" and empty($query/groupby))
+  then
+     for $activity in $selected-items
+     return
+      element iati-activity {
+         $activity/iati-identifier,
+         $activity/title,
+         $activity/reporting-org/@code,
+         $activity/recipient-country
+      }
+  else if ($query/result eq "full" and empty($query/groupby))
+  then 
+     $selected-items
+  else ()
+}
+return
+  if ($query/format eq "xml")
+  then $result
+  else if ($query/format eq "json")
+  then 
+       let $option := util:declare-option ("exist:serialize","method=text media-type=application/json")
+       let $header := response:set-header("Access-Control-Allow-Origin", "*")
+       let $json  := json:xml-to-json($result)
+       return
+           if ($query/callback ne "")
+           then 
+              concat($query/callback,"(",$json,")")
+           else $json
+  else ()  
+else 
+  let $option := util:declare-option("exist:serialize","method=xhtml media-type=text/html")
+  return
+      iati-wo:api-help($query)
+};

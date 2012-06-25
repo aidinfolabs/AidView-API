@@ -1,0 +1,2 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<cache-def><code name="Region" code="Region" path="recipient-region/@iati-ad:region"/><code name="Country" code="Country" path="recipient-country/@iati-ad:country"/><code name="Sector" code="Sector" path="sector/@iati-ad:sector"/><code name="SectorCategory" code="SectorCategory" path="sector/@iati-ad:category"/><code name="Funder" code="OrganisationIdentifier" path="participating-org/@iati-ad:funder"/></cache-def>

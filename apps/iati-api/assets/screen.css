@@ -1,0 +1,63 @@
+body {
+    background-color:#fcfcee;
+}
+a.external {
+    background-image: url('http://www.cems.uwe.ac.uk/xmlwiki/Schools/assets/Icon_External_Link.png');
+    padding-right: 12px;
+    text-decoration: none;
+    background-position: right;
+    background-repeat:no-repeat;
+}
+a img {
+    border:none;
+}
+
+th {text-align:left}
+
+a.visited {
+    font-style:oblique;
+}
+h1,h2,h3,h4 {
+    font-family:arial, helvetica, sans-serif;
+    }
+
+h1 {
+    font-size:15pt;
+    margin-top:20px;
+    margin-bottom:10px;
+    margin-left: 20px;
+
+ }
+h2 {
+    font-size: 13pt;
+    margin-top: 10px;
+    margin-bottom:10px;
+    margin-left: 20px;
+}
+h3 {
+    font-size:12pt;
+    margin-top: 10px;
+    margin-bottom: 3px;
+    margin-left: 10px;
+}
+h4 {
+    font-size:11pt;
+    margin-left: 30px;
+    margin-bottom:3px;
+    margin-top:5px;
+}
+
+div ,p, table{
+    margin-left: 25px;
+}
+span {margin-left:10px;
+
+}
+
+.good {background-color:lightgreen}
+.warn {background-color:orange;}
+.error {background-color:salmon;}
+.missing {background-color:yellow;}
+.left {float:left;}
+.right{float: right;}
+.full {float:none;}

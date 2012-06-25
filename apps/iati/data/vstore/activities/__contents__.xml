@@ -1,3 +1,0 @@
-<collection xmlns="http://exist.sourceforge.net/NS/exist" name="/db/apps/iati/data/vstore/activities" owner="admin" group="dba" mode="777" created="2012-06-23T15:39:57+01:00" version="1">
-    <acl entries="0" version="1"/>
-</collection>
