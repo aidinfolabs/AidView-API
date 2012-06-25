@@ -1,0 +1,27 @@
+<collection xmlns="http://exist.sourceforge.net/NS/exist" name="/db/apps/sys/xq" owner="admin" group="dba" mode="755" created="2012-06-23T15:25:06+01:00" version="1">
+    <acl entries="0" version="1"/>
+    <resource type="BinaryResource" name="browseLog.xq" owner="admin" group="dba" mode="644" created="2012-06-23T15:25:06+01:00" modified="2012-06-23T15:25:06+01:00" filename="browseLog.xq" mimetype="application/xquery">
+        <acl entries="0" version="1"/>
+    </resource>
+    <resource type="BinaryResource" name="export-2.xq" owner="admin" group="dba" mode="644" created="2012-06-23T15:25:06+01:00" modified="2012-06-23T15:25:06+01:00" filename="export-2.xq" mimetype="application/xquery">
+        <acl entries="0" version="1"/>
+    </resource>
+    <resource type="BinaryResource" name="export.xq" owner="admin" group="dba" mode="644" created="2012-06-23T15:25:06+01:00" modified="2012-06-23T15:25:07+01:00" filename="export.xq" mimetype="application/xquery">
+        <acl entries="0" version="1"/>
+    </resource>
+    <resource type="BinaryResource" name="moduleAnalysis.xq" owner="admin" group="dba" mode="644" created="2012-06-23T15:25:07+01:00" modified="2012-06-23T15:25:07+01:00" filename="moduleAnalysis.xq" mimetype="application/xquery">
+        <acl entries="0" version="1"/>
+    </resource>
+    <resource type="BinaryResource" name="rename.xq" owner="admin" group="dba" mode="644" created="2012-06-23T15:25:07+01:00" modified="2012-06-23T15:25:07+01:00" filename="rename.xq" mimetype="application/xquery">
+        <acl entries="0" version="1"/>
+    </resource>
+    <resource type="BinaryResource" name="requestProperties.xq" owner="admin" group="dba" mode="644" created="2012-06-23T15:25:07+01:00" modified="2012-06-23T15:25:07+01:00" filename="requestProperties.xq" mimetype="application/xquery">
+        <acl entries="0" version="1"/>
+    </resource>
+    <resource type="BinaryResource" name="runTests.xq" owner="admin" group="dba" mode="644" created="2012-06-23T15:25:07+01:00" modified="2012-06-23T15:25:07+01:00" filename="runTests.xq" mimetype="application/xquery">
+        <acl entries="0" version="1"/>
+    </resource>
+    <resource type="BinaryResource" name="systemProperties.xq" owner="admin" group="dba" mode="644" created="2012-06-23T15:25:07+01:00" modified="2012-06-23T15:25:07+01:00" filename="systemProperties.xq" mimetype="application/xquery">
+        <acl entries="0" version="1"/>
+    </resource>
+</collection>

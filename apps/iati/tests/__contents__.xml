@@ -1,0 +1,24 @@
+<collection xmlns="http://exist.sourceforge.net/NS/exist" name="/db/apps/iati/tests" owner="admin" group="dba" mode="755" created="2012-06-23T15:25:04+01:00" version="1">
+    <acl entries="0" version="1"/>
+    <resource type="XMLResource" name="api-test1.xml" owner="admin" group="dba" mode="644" created="2012-06-23T15:25:04+01:00" modified="2012-06-23T15:25:04+01:00" filename="api-test1.xml" mimetype="application/xml">
+        <acl entries="0" version="1"/>
+    </resource>
+    <resource type="XMLResource" name="date.xml" owner="admin" group="dba" mode="644" created="2012-06-23T15:25:04+01:00" modified="2012-06-23T15:25:04+01:00" filename="date.xml" mimetype="application/xml">
+        <acl entries="0" version="1"/>
+    </resource>
+    <resource type="BinaryResource" name="expathhttptest.xq" owner="admin" group="dba" mode="644" created="2012-06-23T15:25:04+01:00" modified="2012-06-23T15:25:05+01:00" filename="expathhttptest.xq" mimetype="application/xquery">
+        <acl entries="0" version="1"/>
+    </resource>
+    <resource type="XMLResource" name="jxml.xml" owner="admin" group="dba" mode="644" created="2012-06-23T15:25:05+01:00" modified="2012-06-23T15:25:05+01:00" filename="jxml.xml" mimetype="application/xml">
+        <acl entries="0" version="1"/>
+    </resource>
+    <resource type="XMLResource" name="num.xml" owner="admin" group="dba" mode="644" created="2012-06-23T15:25:05+01:00" modified="2012-06-23T15:25:05+01:00" filename="num.xml" mimetype="application/xml">
+        <acl entries="0" version="1"/>
+    </resource>
+    <resource type="XMLResource" name="url.xml" owner="admin" group="dba" mode="644" created="2012-06-23T15:25:05+01:00" modified="2012-06-23T15:25:05+01:00" filename="url.xml" mimetype="application/xml">
+        <acl entries="0" version="1"/>
+    </resource>
+    <resource type="XMLResource" name="wfn.xml" owner="admin" group="dba" mode="644" created="2012-06-23T15:25:05+01:00" modified="2012-06-23T15:25:05+01:00" filename="wfn.xml" mimetype="application/xml">
+        <acl entries="0" version="1"/>
+    </resource>
+</collection>

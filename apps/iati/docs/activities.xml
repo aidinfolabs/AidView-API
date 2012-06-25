@@ -1,16 +1,5 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<div id="activities">
-    <h1>Activities</h1>
-    <h2>Uploading</h2>
-    <div>The list of activitySets is obtained from the cKAN repository and results in an updated
+<div id="activities"><h1>Activities</h1><h2>Uploading</h2><div>The list of activitySets is obtained from the cKAN repository and results in an updated
         activitySet document in the data/{corpus} directory. This master file is used in downloading
         the activitySet itself from its host site. Each actovity in the activitySet is processed
         through a pipeline of transformations and then written as a document in the
-        data{corpus}/activities directory </div>
-    <div>activitySets can also be uploaded directly from a URL</div>
-    <h2>Browsing, searching and querying</h2>
-    <div>The application provides a basic browser for loaded activities. The OLAP provides a faceted view of the activities as well as views by host or all activities.  Activities can be searched using Lucene by free text in the title or the description.</div>
-    <h2>Current status 21 May</h2>
-    <div> some test activities in corpus unittest</div>
-    <div>corpus fullB is being loaded today</div>
-</div>
+        data{corpus}/activities directory </div><div>activitySets can also be uploaded directly from a URL</div><h2>Browsing, searching and querying</h2><div>The application provides a basic browser for loaded activities. The OLAP provides a faceted view of the activities as well as views by host or all activities.  Activities can be searched using Lucene by free text in the title or the description.</div><h2>Current status 21 May</h2><div> some test activities in corpus unittest</div><div>corpus fullB is being loaded today</div></div>

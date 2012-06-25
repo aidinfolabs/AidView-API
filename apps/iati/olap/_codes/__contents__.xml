@@ -1,0 +1,108 @@
+<collection xmlns="http://exist.sourceforge.net/NS/exist" name="/db/apps/iati/olap/_codes" owner="admin" group="dba" mode="755" created="2012-06-23T15:24:58+01:00" version="1">
+    <acl entries="0" version="1"/>
+    <resource type="XMLResource" name="ActivityDateType.xml" owner="admin" group="dba" mode="644" created="2012-06-23T15:24:58+01:00" modified="2012-06-23T15:24:58+01:00" filename="ActivityDateType.xml" mimetype="application/xml">
+        <acl entries="0" version="1"/>
+    </resource>
+    <resource type="XMLResource" name="ActivityStatus.xml" owner="admin" group="dba" mode="644" created="2012-06-23T15:24:58+01:00" modified="2012-06-23T15:24:58+01:00" filename="ActivityStatus.xml" mimetype="application/xml">
+        <acl entries="0" version="1"/>
+    </resource>
+    <resource type="XMLResource" name="AidType.xml" owner="admin" group="dba" mode="644" created="2012-06-23T15:24:59+01:00" modified="2012-06-23T15:24:59+01:00" filename="AidType.xml" mimetype="application/xml">
+        <acl entries="0" version="1"/>
+    </resource>
+    <resource type="XMLResource" name="BudgetType.xml" owner="admin" group="dba" mode="644" created="2012-06-23T15:24:59+01:00" modified="2012-06-23T15:24:59+01:00" filename="BudgetType.xml" mimetype="application/xml">
+        <acl entries="0" version="1"/>
+    </resource>
+    <resource type="XMLResource" name="CollaborationType.xml" owner="admin" group="dba" mode="644" created="2012-06-23T15:24:59+01:00" modified="2012-06-23T15:24:59+01:00" filename="CollaborationType.xml" mimetype="application/xml">
+        <acl entries="0" version="1"/>
+    </resource>
+    <resource type="XMLResource" name="ConditionType.xml" owner="admin" group="dba" mode="644" created="2012-06-23T15:24:59+01:00" modified="2012-06-23T15:24:59+01:00" filename="ConditionType.xml" mimetype="application/xml">
+        <acl entries="0" version="1"/>
+    </resource>
+    <resource type="XMLResource" name="Country.xml" owner="admin" group="dba" mode="644" created="2012-06-23T15:24:59+01:00" modified="2012-06-23T15:24:59+01:00" filename="Country.xml" mimetype="application/xml">
+        <acl entries="0" version="1"/>
+    </resource>
+    <resource type="XMLResource" name="Currency.xml" owner="admin" group="dba" mode="644" created="2012-06-23T15:24:59+01:00" modified="2012-06-23T15:24:59+01:00" filename="Currency.xml" mimetype="application/xml">
+        <acl entries="0" version="1"/>
+    </resource>
+    <resource type="XMLResource" name="DescriptionType.xml" owner="admin" group="dba" mode="644" created="2012-06-23T15:24:59+01:00" modified="2012-06-23T15:24:59+01:00" filename="DescriptionType.xml" mimetype="application/xml">
+        <acl entries="0" version="1"/>
+    </resource>
+    <resource type="XMLResource" name="DisbursementChannel.xml" owner="admin" group="dba" mode="644" created="2012-06-23T15:24:59+01:00" modified="2012-06-23T15:24:59+01:00" filename="DisbursementChannel.xml" mimetype="application/xml">
+        <acl entries="0" version="1"/>
+    </resource>
+    <resource type="XMLResource" name="DocumentCategory.xml" owner="admin" group="dba" mode="644" created="2012-06-23T15:24:59+01:00" modified="2012-06-23T15:24:59+01:00" filename="DocumentCategory.xml" mimetype="application/xml">
+        <acl entries="0" version="1"/>
+    </resource>
+    <resource type="XMLResource" name="FileFormat.xml" owner="admin" group="dba" mode="644" created="2012-06-23T15:25:00+01:00" modified="2012-06-23T15:25:00+01:00" filename="FileFormat.xml" mimetype="application/xml">
+        <acl entries="0" version="1"/>
+    </resource>
+    <resource type="XMLResource" name="FinanceType.xml" owner="admin" group="dba" mode="644" created="2012-06-23T15:25:00+01:00" modified="2012-06-23T15:25:00+01:00" filename="FinanceType.xml" mimetype="application/xml">
+        <acl entries="0" version="1"/>
+    </resource>
+    <resource type="XMLResource" name="FlowType.xml" owner="admin" group="dba" mode="644" created="2012-06-23T15:25:00+01:00" modified="2012-06-23T15:25:00+01:00" filename="FlowType.xml" mimetype="application/xml">
+        <acl entries="0" version="1"/>
+    </resource>
+    <resource type="XMLResource" name="GazetteerAgency.xml" owner="admin" group="dba" mode="644" created="2012-06-23T15:25:00+01:00" modified="2012-06-23T15:25:00+01:00" filename="GazetteerAgency.xml" mimetype="application/xml">
+        <acl entries="0" version="1"/>
+    </resource>
+    <resource type="XMLResource" name="GeographicalPrecision.xml" owner="admin" group="dba" mode="644" created="2012-06-23T15:25:00+01:00" modified="2012-06-23T15:25:00+01:00" filename="GeographicalPrecision.xml" mimetype="application/xml">
+        <acl entries="0" version="1"/>
+    </resource>
+    <resource type="XMLResource" name="IndicatorMeasure.xml" owner="admin" group="dba" mode="644" created="2012-06-23T15:25:00+01:00" modified="2012-06-23T15:25:00+01:00" filename="IndicatorMeasure.xml" mimetype="application/xml">
+        <acl entries="0" version="1"/>
+    </resource>
+    <resource type="XMLResource" name="Language.xml" owner="admin" group="dba" mode="644" created="2012-06-23T15:25:00+01:00" modified="2012-06-23T15:25:00+01:00" filename="Language.xml" mimetype="application/xml">
+        <acl entries="0" version="1"/>
+    </resource>
+    <resource type="XMLResource" name="LocationType.xml" owner="admin" group="dba" mode="644" created="2012-06-23T15:25:00+01:00" modified="2012-06-23T15:25:00+01:00" filename="LocationType.xml" mimetype="application/xml">
+        <acl entries="0" version="1"/>
+    </resource>
+    <resource type="XMLResource" name="OrganisationIdentifier.xml" owner="admin" group="dba" mode="644" created="2012-06-23T15:25:01+01:00" modified="2012-06-23T15:25:01+01:00" filename="OrganisationIdentifier.xml" mimetype="application/xml">
+        <acl entries="0" version="1"/>
+    </resource>
+    <resource type="XMLResource" name="OrganisationRole.xml" owner="admin" group="dba" mode="644" created="2012-06-23T15:25:01+01:00" modified="2012-06-23T15:25:01+01:00" filename="OrganisationRole.xml" mimetype="application/xml">
+        <acl entries="0" version="1"/>
+    </resource>
+    <resource type="XMLResource" name="OrganisationType.xml" owner="admin" group="dba" mode="644" created="2012-06-23T15:25:01+01:00" modified="2012-06-23T15:25:01+01:00" filename="OrganisationType.xml" mimetype="application/xml">
+        <acl entries="0" version="1"/>
+    </resource>
+    <resource type="XMLResource" name="PolicyMarker.xml" owner="admin" group="dba" mode="644" created="2012-06-23T15:25:01+01:00" modified="2012-06-23T15:25:01+01:00" filename="PolicyMarker.xml" mimetype="application/xml">
+        <acl entries="0" version="1"/>
+    </resource>
+    <resource type="XMLResource" name="PolicySignificance.xml" owner="admin" group="dba" mode="644" created="2012-06-23T15:25:01+01:00" modified="2012-06-23T15:25:01+01:00" filename="PolicySignificance.xml" mimetype="application/xml">
+        <acl entries="0" version="1"/>
+    </resource>
+    <resource type="XMLResource" name="PublisherType.xml" owner="admin" group="dba" mode="644" created="2012-06-23T15:25:01+01:00" modified="2012-06-23T15:25:01+01:00" filename="PublisherType.xml" mimetype="application/xml">
+        <acl entries="0" version="1"/>
+    </resource>
+    <resource type="XMLResource" name="Region.xml" owner="admin" group="dba" mode="644" created="2012-06-23T15:25:01+01:00" modified="2012-06-23T15:25:01+01:00" filename="Region.xml" mimetype="application/xml">
+        <acl entries="0" version="1"/>
+    </resource>
+    <resource type="XMLResource" name="RelatedActivityType.xml" owner="admin" group="dba" mode="644" created="2012-06-23T15:25:01+01:00" modified="2012-06-23T15:25:01+01:00" filename="RelatedActivityType.xml" mimetype="application/xml">
+        <acl entries="0" version="1"/>
+    </resource>
+    <resource type="XMLResource" name="ResultType.xml" owner="admin" group="dba" mode="644" created="2012-06-23T15:25:02+01:00" modified="2012-06-23T15:25:02+01:00" filename="ResultType.xml" mimetype="application/xml">
+        <acl entries="0" version="1"/>
+    </resource>
+    <resource type="XMLResource" name="Sector.xml" owner="admin" group="dba" mode="644" created="2012-06-23T15:25:02+01:00" modified="2012-06-23T15:25:02+01:00" filename="Sector.xml" mimetype="application/xml">
+        <acl entries="0" version="1"/>
+    </resource>
+    <resource type="XMLResource" name="SectorCategory.xml" owner="admin" group="dba" mode="644" created="2012-06-23T15:25:02+01:00" modified="2012-06-23T15:25:02+01:00" filename="SectorCategory.xml" mimetype="application/xml">
+        <acl entries="0" version="1"/>
+    </resource>
+    <resource type="XMLResource" name="TiedStatus.xml" owner="admin" group="dba" mode="644" created="2012-06-23T15:25:02+01:00" modified="2012-06-23T15:25:02+01:00" filename="TiedStatus.xml" mimetype="application/xml">
+        <acl entries="0" version="1"/>
+    </resource>
+    <resource type="XMLResource" name="TransactionType.xml" owner="admin" group="dba" mode="644" created="2012-06-23T15:25:02+01:00" modified="2012-06-23T15:25:02+01:00" filename="TransactionType.xml" mimetype="application/xml">
+        <acl entries="0" version="1"/>
+    </resource>
+    <resource type="XMLResource" name="ValueType.xml" owner="admin" group="dba" mode="644" created="2012-06-23T15:25:02+01:00" modified="2012-06-23T15:25:02+01:00" filename="ValueType.xml" mimetype="application/xml">
+        <acl entries="0" version="1"/>
+    </resource>
+    <resource type="XMLResource" name="VerificationStatus.xml" owner="admin" group="dba" mode="644" created="2012-06-23T15:25:02+01:00" modified="2012-06-23T15:25:02+01:00" filename="VerificationStatus.xml" mimetype="application/xml">
+        <acl entries="0" version="1"/>
+    </resource>
+    <resource type="XMLResource" name="Vocabulary.xml" owner="admin" group="dba" mode="644" created="2012-06-23T15:25:02+01:00" modified="2012-06-23T15:25:02+01:00" filename="Vocabulary.xml" mimetype="application/xml">
+        <acl entries="0" version="1"/>
+    </resource>
+</collection>

@@ -1,28 +1,14 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<TestSet>
-    <testName>API - part A </testName>
-    <description>
+<TestSet><testName>API - part A </testName><description>
         This tests the functionality of the API using a small test corpus 
-    </description>
-    <author>Chris Wallace</author>
-    <test output="text">
-        <task>group all by Country</task>
-        <code>
+    </description><author>Chris Wallace</author><test output="text"><task>group all by Country</task><code>
             <![CDATA[
  let $result := doc("http://datadev.aidinfolabs.org/xquery/woapi.xq?test=no&amp;corpus=unittest&amp;groupby=Country&amp;result=values")/result
  return $result/Country[code="AL"]/value
-            ]]></code>
-        <expected>1.517013E6</expected>
-    </test>
-    <test output="text">
-        <task>activities for Bolivia - values</task>
-        <code>
+            ]]></code><expected>1.517013E6</expected></test><test output="text"><task>activities for Bolivia - values</task><code>
             <![CDATA[
  let $result := doc("http://datadev.aidinfolabs.org/xquery/woapi.xq?test=no&amp;corpus=unittest&amp;Country=MM&amp;result=values")
  return $result/result/@activity-count/string()
-            ]]></code>
-        <expected>7</expected>
-    </test>
+            ]]></code><expected>7</expected></test>
     <!--
     <test output="text">
         <task>group all by Country</task>
@@ -102,5 +88,4 @@
         <expected>$output/@activity-count = "10"</expected>
         <comment> this groups all selected activities and provides the summary</comment>
     </test>
-    -->
-</TestSet>
+    --></TestSet>

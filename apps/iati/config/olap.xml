@@ -1,4 +1,3 @@
-<?xml version="1.0" encoding="UTF-8"?>
 <dimensions from-year="2009" to-year="2013">
     <!-- this file defines the contents of the olap cache generated forom a corpus of activities.  The cache is  replaced in total, not updated in situ and is expensive.
           name - the name of the facet/dimension being summarised
@@ -12,25 +11,4 @@
                financial - transaction summary by type and year
                set - set data
           link *  defines a link to displayin the facet summary and can point to supporting webpages - It is used here to link to opencirce 
-    -->
-    <dimension name="Publisher" code="OrganisationIdentifier" path="reporting-org/@ref" mine="true" cache="true">
-        <summary>complance</summary>
-        <link href="http://opencirce.org/org/code/{value}" label="OpenCirce"/>
-    </dimension>
-    <dimension name="Region" code="Region" path="recipient-region/@iati-ad:region" cache="true"/>
-    <dimension name="Country" code="Country" path="recipient-country/@iati-ad:country" feed="true" cache="true">
-        <link href="http://opencirce.org/?_option=propagate&amp;ISO3166={value}" label="OpenCirce"/>
-    </dimension>
-    <dimension name="Sector" code="Sector" path="sector/@iati-ad:sector" cache="true"/>
-    <dimension name="SectorCategory" code="SectorCategory" path="sector/@iati-ad:category" feed="true" cache="true"/>
-    <dimension name="Funder" code="OrganisationIdentifier" path="participating-org/@iati-ad:funder" cache="true">
-        <summary>financial</summary>
-        <link href="http://opencirce.org/org/code/{value}" label="OpenCirce"/>
-    </dimension>
-    <dimension name="Participant" code="OrganisationIdentifier" path="participating-org/@iati-ad:org" mine="true" cache="true">
-        <link href="http://opencirce.org/org/code/{value}" label="OpenCirce"/>
-    </dimension>
-    <dimension name="Host">
-        <summary>sets</summary>
-    </dimension>
-</dimensions>
+    --><dimension name="Publisher" code="OrganisationIdentifier" path="reporting-org/@ref" mine="true" cache="true"><summary>complance</summary><link href="http://opencirce.org/org/code/{value}" label="OpenCirce"/></dimension><dimension name="Region" code="Region" path="recipient-region/@iati-ad:region" cache="true"/><dimension name="Country" code="Country" path="recipient-country/@iati-ad:country" feed="true" cache="true"><link href="http://opencirce.org/?_option=propagate&amp;ISO3166={value}" label="OpenCirce"/></dimension><dimension name="Sector" code="Sector" path="sector/@iati-ad:sector" cache="true"/><dimension name="SectorCategory" code="SectorCategory" path="sector/@iati-ad:category" feed="true" cache="true"/><dimension name="Funder" code="OrganisationIdentifier" path="participating-org/@iati-ad:funder" cache="true"><summary>financial</summary><link href="http://opencirce.org/org/code/{value}" label="OpenCirce"/></dimension><dimension name="Participant" code="OrganisationIdentifier" path="participating-org/@iati-ad:org" mine="true" cache="true"><link href="http://opencirce.org/org/code/{value}" label="OpenCirce"/></dimension><dimension name="Host"><summary>sets</summary></dimension></dimensions>

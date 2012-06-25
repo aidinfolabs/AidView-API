@@ -1,0 +1,33 @@
+<collection xmlns="http://exist.sourceforge.net/NS/exist" name="/db/apps/iati/system" owner="admin" group="dba" mode="755" created="2012-06-23T15:25:03+01:00" version="1">
+    <acl entries="0" version="1"/>
+    <resource type="XMLResource" name="activity-collection-lucene.xconf" owner="admin" group="dba" mode="644" created="2012-06-23T15:25:03+01:00" modified="2012-06-23T15:25:03+01:00" filename="activity-collection-lucene.xconf" mimetype="application/xml">
+        <acl entries="0" version="1"/>
+    </resource>
+    <resource type="XMLResource" name="activity-collection.xconf" owner="admin" group="dba" mode="644" created="2012-06-23T15:25:03+01:00" modified="2012-06-23T15:25:03+01:00" filename="activity-collection.xconf" mimetype="application/xml">
+        <acl entries="0" version="1"/>
+    </resource>
+    <resource type="XMLResource" name="activitySet-collection.xconf" owner="admin" group="dba" mode="644" created="2012-06-23T15:25:03+01:00" modified="2012-06-23T15:25:03+01:00" filename="activitySet-collection.xconf" mimetype="application/xml">
+        <acl entries="0" version="1"/>
+    </resource>
+    <resource type="XMLResource" name="conf.xml" owner="admin" group="dba" mode="644" created="2012-06-23T15:25:03+01:00" modified="2012-06-23T15:25:03+01:00" filename="conf.xml" mimetype="application/xml">
+        <acl entries="0" version="1"/>
+    </resource>
+    <resource type="BinaryResource" name="dev.aidinfolabs.org.conf" owner="admin" group="dba" mode="644" created="2012-06-23T15:25:03+01:00" modified="2012-06-23T15:25:04+01:00" filename="dev.aidinfolabs.org.conf" mimetype="application/octet-stream">
+        <acl entries="0" version="1"/>
+    </resource>
+    <resource type="XMLResource" name="jobs.xml" owner="admin" group="dba" mode="644" created="2012-06-23T15:25:04+01:00" modified="2012-06-23T15:25:04+01:00" filename="jobs.xml" mimetype="application/xml">
+        <acl entries="0" version="1"/>
+    </resource>
+    <resource type="XMLResource" name="olap-collection.xconf" owner="admin" group="dba" mode="644" created="2012-06-23T15:25:04+01:00" modified="2012-06-23T15:25:04+01:00" filename="olap-collection.xconf" mimetype="application/xml">
+        <acl entries="0" version="1"/>
+    </resource>
+    <resource type="XMLResource" name="resources-data.xml" owner="admin" group="dba" mode="644" created="2012-06-23T15:25:04+01:00" modified="2012-06-23T15:25:04+01:00" filename="resources-data.xml" mimetype="application/xml">
+        <acl entries="0" version="1"/>
+    </resource>
+    <resource type="XMLResource" name="resources-full.xml" owner="admin" group="dba" mode="644" created="2012-06-23T15:25:04+01:00" modified="2012-06-23T15:25:04+01:00" filename="resources-full.xml" mimetype="application/xml">
+        <acl entries="0" version="1"/>
+    </resource>
+    <resource type="XMLResource" name="resources.xml" owner="admin" group="dba" mode="644" created="2012-06-23T15:25:04+01:00" modified="2012-06-23T15:25:04+01:00" filename="resources.xml" mimetype="application/xml">
+        <acl entries="0" version="1"/>
+    </resource>
+</collection>

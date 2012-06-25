@@ -1,15 +1,1 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<corpusindex>
-    <corpus name="vstore" hidden="hidden">
-        <description>for public testing and validation</description>
-    </corpus>
-    <corpus name="unittest" pipeline="pipeline1">
-        <description>small corpus for api testing </description>
-    </corpus>
-    <corpus name="test" pipeline="pipeline1">
-        <description>load testing</description>
-    </corpus>
-    <corpus name="fullB" pipeline="pipeline1">
-        <description>the full activity corpus when it has been loaded </description>
-    </corpus>
-</corpusindex>
+<corpusindex><corpus name="vstore" hidden="hidden"><description>for public testing and validation</description></corpus><corpus name="unittest" pipeline="pipeline1"><description>small corpus for api testing </description></corpus><corpus name="test" pipeline="pipeline1"><description>load testing</description></corpus><corpus name="fullB" pipeline="pipeline1"><description>the full activity corpus when it has been loaded </description></corpus></corpusindex>

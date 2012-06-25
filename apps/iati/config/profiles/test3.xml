@@ -1,5 +1,1 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<profile name="test3" root="activity">
-    <description>counting activity properties</description>
-    <ruleset name="counts" threshold="0"/>
-</profile>
+<profile name="test3" root="activity"><description>counting activity properties</description><ruleset name="counts" threshold="0"/></profile>

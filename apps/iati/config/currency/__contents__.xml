@@ -1,0 +1,9 @@
+<collection xmlns="http://exist.sourceforge.net/NS/exist" name="/db/apps/iati/config/currency" owner="admin" group="dba" mode="755" created="2012-06-23T15:24:40+01:00" version="1">
+    <acl entries="0" version="1"/>
+    <resource type="XMLResource" name="country-currency.xml" owner="admin" group="dba" mode="644" created="2012-06-23T15:24:40+01:00" modified="2012-06-23T15:24:40+01:00" filename="country-currency.xml" mimetype="application/xml">
+        <acl entries="0" version="1"/>
+    </resource>
+    <resource type="XMLResource" name="currency-conversion2.xml" owner="admin" group="dba" mode="644" created="2012-06-23T15:24:40+01:00" modified="2012-06-23T15:24:40+01:00" filename="currency-conversion2.xml" mimetype="application/xml">
+        <acl entries="0" version="1"/>
+    </resource>
+</collection>

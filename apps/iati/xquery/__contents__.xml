@@ -1,0 +1,24 @@
+<collection xmlns="http://exist.sourceforge.net/NS/exist" name="/db/apps/iati/xquery" owner="admin" group="dba" mode="755" created="2012-06-23T15:25:05+01:00" version="1">
+    <acl entries="0" version="1"/>
+    <resource type="BinaryResource" name="admin.xq" owner="admin" group="dba" mode="755" created="2012-06-23T15:25:05+01:00" modified="2012-06-23T15:25:05+01:00" filename="admin.xq" mimetype="application/xquery">
+        <acl entries="0" version="1"/>
+    </resource>
+    <resource type="BinaryResource" name="ckan-job.xq" owner="admin" group="dba" mode="755" created="2012-06-23T15:25:05+01:00" modified="2012-06-23T15:25:05+01:00" filename="ckan-job.xq" mimetype="application/xquery">
+        <acl entries="0" version="1"/>
+    </resource>
+    <resource type="BinaryResource" name="data.xq" owner="admin" group="dba" mode="644" created="2012-06-23T15:25:05+01:00" modified="2012-06-23T15:25:05+01:00" filename="data.xq" mimetype="application/xquery">
+        <acl entries="0" version="1"/>
+    </resource>
+    <resource type="BinaryResource" name="download-job.xq" owner="admin" group="dba" mode="755" created="2012-06-23T15:25:05+01:00" modified="2012-06-23T15:25:05+01:00" filename="download-job.xq" mimetype="application/xquery">
+        <acl entries="0" version="1"/>
+    </resource>
+    <resource type="BinaryResource" name="olap-job.xq" owner="admin" group="dba" mode="644" created="2012-06-23T15:25:06+01:00" modified="2012-06-23T15:25:06+01:00" filename="olap-job.xq" mimetype="application/xquery">
+        <acl entries="0" version="1"/>
+    </resource>
+    <resource type="BinaryResource" name="post-install.xq" owner="admin" group="dba" mode="755" created="2012-06-23T15:25:06+01:00" modified="2012-06-23T15:25:06+01:00" filename="post-install.xq" mimetype="application/xquery">
+        <acl entries="0" version="1"/>
+    </resource>
+    <resource type="BinaryResource" name="woapi.xq" owner="admin" group="dba" mode="755" created="2012-06-23T15:25:06+01:00" modified="2012-06-23T15:25:06+01:00" filename="woapi.xq" mimetype="application/xquery">
+        <acl entries="0" version="1"/>
+    </resource>
+</collection>

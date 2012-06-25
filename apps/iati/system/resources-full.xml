@@ -1,15 +1,1 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<resources name="iati-1.2">
-    <resource path="/db/apps/iati">
-        <description>all iati</description>
-    </resource>
-    <resource path="/db/apps/sys">
-        <description>all sys</description>
-    </resource>
-    <resource path="/db/lib">
-        <description>all library modules</description>
-    </resource>
-    <resource path="/db/system/config/db/apps/iati">
-        <description>All the index files</description>
-    </resource>
-</resources>
+<resources name="iati-1.2"><resource path="/db/apps/iati"><description>all iati</description></resource><resource path="/db/apps/sys"><description>all sys</description></resource><resource path="/db/lib"><description>all library modules</description></resource><resource path="/db/system/config/db/apps/iati"><description>All the index files</description></resource></resources>

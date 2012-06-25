@@ -1,0 +1,36 @@
+<collection xmlns="http://exist.sourceforge.net/NS/exist" name="/db/apps/iati/docs" owner="admin" group="dba" mode="755" created="2012-06-23T15:24:42+01:00" version="1">
+    <acl entries="0" version="1"/>
+    <resource type="XMLResource" name="activities.xml" owner="admin" group="dba" mode="644" created="2012-06-23T15:24:43+01:00" modified="2012-06-23T15:24:43+01:00" filename="activities.xml" mimetype="application/xml">
+        <acl entries="0" version="1"/>
+    </resource>
+    <resource type="XMLResource" name="backup.xml" owner="admin" group="dba" mode="644" created="2012-06-23T15:24:43+01:00" modified="2012-06-23T15:24:43+01:00" filename="backup.xml" mimetype="application/xml">
+        <acl entries="0" version="1"/>
+    </resource>
+    <resource type="XMLResource" name="codelists.xml" owner="admin" group="dba" mode="644" created="2012-06-23T15:24:43+01:00" modified="2012-06-23T15:24:43+01:00" filename="codelists.xml" mimetype="application/xml">
+        <acl entries="0" version="1"/>
+    </resource>
+    <resource type="XMLResource" name="corpus.xml" owner="admin" group="dba" mode="644" created="2012-06-23T15:24:43+01:00" modified="2012-06-23T15:24:43+01:00" filename="corpus.xml" mimetype="application/xml">
+        <acl entries="0" version="1"/>
+    </resource>
+    <resource type="XMLResource" name="deployment.xml" owner="admin" group="dba" mode="644" created="2012-06-23T15:24:43+01:00" modified="2012-06-23T15:24:43+01:00" filename="deployment.xml" mimetype="application/xml">
+        <acl entries="0" version="1"/>
+    </resource>
+    <resource type="XMLResource" name="design.xml" owner="admin" group="dba" mode="644" created="2012-06-23T15:24:43+01:00" modified="2012-06-23T15:24:43+01:00" filename="design.xml" mimetype="application/xml">
+        <acl entries="0" version="1"/>
+    </resource>
+    <resource type="XMLResource" name="num.xml" owner="admin" group="dba" mode="644" created="2012-06-23T15:24:43+01:00" modified="2012-06-23T15:24:43+01:00" filename="num.xml" mimetype="application/xml">
+        <acl entries="0" version="1"/>
+    </resource>
+    <resource type="XMLResource" name="olap.xml" owner="admin" group="dba" mode="644" created="2012-06-23T15:24:43+01:00" modified="2012-06-23T15:24:43+01:00" filename="olap.xml" mimetype="application/xml">
+        <acl entries="0" version="1"/>
+    </resource>
+    <resource type="XMLResource" name="pipeline.xml" owner="admin" group="dba" mode="644" created="2012-06-23T15:24:43+01:00" modified="2012-06-23T15:24:43+01:00" filename="pipeline.xml" mimetype="application/xml">
+        <acl entries="0" version="1"/>
+    </resource>
+    <resource type="XMLResource" name="profiles.xml" owner="admin" group="dba" mode="644" created="2012-06-23T15:24:43+01:00" modified="2012-06-23T15:24:43+01:00" filename="profiles.xml" mimetype="application/xml">
+        <acl entries="0" version="1"/>
+    </resource>
+    <resource type="XMLResource" name="rulesets.xml" owner="admin" group="dba" mode="644" created="2012-06-23T15:24:44+01:00" modified="2012-06-23T15:24:44+01:00" filename="rulesets.xml" mimetype="application/xml">
+        <acl entries="0" version="1"/>
+    </resource>
+</collection>
