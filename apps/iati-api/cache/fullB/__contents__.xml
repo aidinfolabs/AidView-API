@@ -1,4 +1,0 @@
-<collection xmlns="http://exist.sourceforge.net/NS/exist" name="/db/apps/iati-api/cache/fullB" version="1" owner="admin" group="dba" mode="755" created="2011-11-24T22:56:57.593Z">
-    <resource type="XMLResource" name="corpus-statistics.xml" skip="no" owner="admin" group="dba" mode="755" created="2012-02-21T18:22:06.628Z" modified="2012-02-21T18:22:06.628Z" filename="corpus-statistics.xml" mimetype="text/xml"/>
-    <resource type="XMLResource" name="summary.xml" skip="no" owner="admin" group="dba" mode="755" created="2011-11-24T22:57:14.496Z" modified="2011-11-24T22:57:14.496Z" filename="summary.xml" mimetype="text/xml"/>
-</collection>
