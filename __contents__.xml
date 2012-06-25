@@ -1,9 +1,6 @@
 <collection xmlns="http://exist.sourceforge.net/NS/exist" name="/db" version="1" owner="admin" group="dba" mode="777" created="2011-11-17T20:34:09.515Z">
-    <subcollection name="cache" filename="cache"/>
     <subcollection name="jscript" filename="jscript"/>
-    <subcollection name="export" filename="export"/>
     <subcollection name="apps" filename="apps"/>
-    <subcollection name="twitter" filename="twitter"/>
     <subcollection name="system" filename="system"/>
     <subcollection name="lib" filename="lib"/>
 </collection>
